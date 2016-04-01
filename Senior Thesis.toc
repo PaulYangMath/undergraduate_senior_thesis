@@ -1,19 +1,19 @@
 \contentsline {section}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {2}Simply Ramified Curves in $\mathbb {P}^1 \times \mathbb {P}^1$}{3}
-\contentsline {subsection}{\numberline {2.1}Introduction}{3}
+\contentsline {section}{\numberline {2}Simply Ramified Curves in $\mathbb {P}^1 \times \mathbb {P}^1$}{4}
+\contentsline {subsection}{\numberline {2.1}Introduction}{4}
 \contentsline {paragraph}{Notation}{4}
-\contentsline {subsection}{\numberline {2.2}An analogue of Bertini's theorem}{4}
+\contentsline {subsection}{\numberline {2.2}An analogue of Bertini's theorem}{5}
 \contentsline {subsection}{\numberline {2.3}A density result over finite fields}{6}
-\contentsline {subsubsection}{\numberline {2.3.1}Low and medium degree points}{6}
-\contentsline {subsubsection}{\numberline {2.3.2}High degree points}{9}
-\contentsline {section}{\numberline {3}Elliptic Surfaces in $\mathbb {P}^2 \times \mathbb {P}^1$}{13}
-\contentsline {subsection}{\numberline {3.1}Introduction}{13}
+\contentsline {subsubsection}{\numberline {2.3.1}Low and medium degree points}{7}
+\contentsline {subsubsection}{\numberline {2.3.2}High degree points}{10}
+\contentsline {section}{\numberline {3}Elliptic Surfaces in $\mathbb {P}^2 \times \mathbb {P}^1$}{14}
+\contentsline {subsection}{\numberline {3.1}Introduction}{14}
 \contentsline {paragraph}{Notation}{14}
 \contentsline {subsection}{\numberline {3.2}Plane Cubics}{15}
 \contentsline {subsubsection}{\numberline {3.2.1}Classification}{15}
 \contentsline {subsubsection}{\numberline {3.2.2}Counting Plane Cubics of Different Types}{17}
 \contentsline {subsection}{\numberline {3.3}Euler Characteristic}{20}
-\contentsline {subsection}{\numberline {3.4}A Density Result over Finite Fields}{21}
+\contentsline {subsection}{\numberline {3.4}A Density Result over Finite Fields}{22}
 \contentsline {subsubsection}{\numberline {3.4.1}Points of Low and Medium Degree}{22}
-\contentsline {subsubsection}{\numberline {3.4.2}Points of High Degree}{24}
+\contentsline {subsubsection}{\numberline {3.4.2}Points of High Degree}{25}
 \contentsline {subsubsection}{\numberline {3.4.3}Proof of The Main Result}{28}
