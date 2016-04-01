@@ -190,6 +190,8 @@
 
 
 
+
+
 %
 \begin{document}
 %
@@ -213,6 +215,15 @@ $$ \lim_{d \to \infty} \frac{\# \sP \cap H^0(\IP^n, \sO(d))}{\# H^0(\IP^n, \sO(d
 if it exists, is $\zeta_X(m + 1)^{-1}$. 
 \end{theorem}
 
+Poonen employed an analogue of the sieve method in number theory, which he called ``closed point sieve", in the proof of the theorem. We may explain the main idea of his proof here. The condition that $\{ f = 0 \} \cap X$ is singular at a closed point $Q \in X$ amounts to $m + 1$ linear conditions on the coefficients of $f$, since if we dehomogenize $f$ at an affine chart in $\IP^n$ that contains $Q$ to obtain a regular function in the neighborhood of $Q$, then all partial derivatives of this function have to vanish. These linear conditions are over the residue field of $P$. When $d$ is large enough, $f$ has more than $d + 1$ cofficients, the density of $f$ such that $f = 0$ intersects $X$ transversely is $(1 - q^{-(m + 1) \deg Q})$. In fact, let $\sP_{e}$ denote the set $\union_d \{ f \in H^0(\IP^n, \sO(d)) : \{f=0\} \cap X \textit{ is smooth at all }Q \textit{ with } \deg Q \le e \}$, it is not hard to prove that 
+\begin{align*}
+\mu(\sP_e) = \prod_{Q \in X : \deg Q \le e} (1 - q^{-(m + 1) \deg Q})
+\end{align*}  
+We may guess that $\mu(\sP) = \lim_{d \to \infty} \mu(\sP_e) = \zeta_X(m + 1)$. Indeed, essentially what we need to do is to justify a change of limit
+$$ \lim_{d \to \infty} \frac{\# \cap_{e = 1}^\infty \sP_e \cap H^0(\IP^n, \sO(d))}{\# H^0(\IP^n, \sO(d))} = \lim_{e \to \infty} \lim_{d \to \infty} \frac{\# \sP_e \cap H^0(\IP^n, \sO(d))}{\# H^0(\IP^n, \sO(d))}$$
+Therefore, the only thing left is to bound the tail terms, and indeed it is the most technical part of the proof. Poonen used a very clever decoupling idea to control the error that arises from ignoring the conditions from points of high degree. 
+
+
 In fact, Poonen proved a more general version of the theorem, with which he yielded many new results. He used it to construct conterexamples to the original hyperplane Bertini theorem. He could also construct examples of space-filling and space-avoiding varieties. For example, he proved the following:
 
 \begin{theorem}
@@ -226,14 +237,20 @@ Poonen's theorem 1.1 has been generalized by Erman and Wood to semiample divisor
 Let $X$ be a smooth projective variety over $\IF_q$, with a
 very ample divisor $A$ and a globally generated divisor $E$. Let π be the map given by the
 complete linear series on E.
-$$ \pi : X \stackrel{|E|}{\pi} \IP^M $$
+$$ \pi : X \stackrel{|E|}{\to} \IP^M $$
 There exists an $n_0$, depending only on $\dim X$ and $\mathrm{char\,} \IF_q$, such that for $n \ge n_0$, the
 probability of smoothness for a random $D \in |nA + dE|$ as $d \to \infty$ is given by the product of local probabilities taken over the fibers of π:
-$$ \Prob(D \text{is smooth}) = \prod_{P \in \IP^M} \Prob(D \text{is smooth at all points of } \pi^{-1}(P)). $$
+$$ \Prob(D \text{ is smooth}) = \prod_{P \in \IP^M} \Prob(D \text{ is smooth at all points of } \pi^{-1}(P)). $$
 The product on the right converges, is zero only if some factor is zero, and is always non-zero for $n$ sufficiently large.
 \end{theorem}
 
-By ``probability", they mean an asymptotic probability, which is defined in much the same way that Poonen defined the asymptotic density. 
+By ``probability", they mean an asymptotic probability, which is defined in the same way that Poonen defined the asymptotic density. 
+
+This thesis studies non-singular hypersurfaces of bidegree $(3, d)$ in $\IP^1 \times \IP^1$ and $\IP^2 \times \IP^1$ over a finite field $\IF_q$. Via the second projection to $\IP^1$, these hypersurfaces can viewed as $\IP^1$-families of three colinear points and plane cubics respectively. Due to topological constraints, these families will inevitably contain some singular fibers. We may ask for the density of those families whose fibers have at worst the simplest type of singularity. We borrow techniques from \cite{Wood} to show that we can express this density as an infinite product taken over all closed points in $\IP^1$. However, we need to make some nontrivial adjustments to the sieve method to bound the error terms in our case. In particular, in the study of hypersurfaces of bidegree $(3, d)$ in $\IP^2 \times \IP^1$, we employ the basic idea of \textit{linearization}.
+
+In \cite{expository}, Poonen proposed a principle that ``If an existence result about polynomials
+or $n$-tuples of polynomials over an infinite field can be proved by dimension counting,
+then a corresponding result over finite fields can be proved by the closed point sieve." Both our results conform this principle. The author hopes that these results will be of some use to inspire the formulation of some meta-theorems that make this principle precise.  
 
 
 \section{Simply Ramified Curves in $\IP^1 \times \IP^1$}
@@ -520,7 +537,7 @@ Suppose $Q$ is a singularity. Note that $\deg Q$ has to be $1$ since a plane cub
 % $$(U_0, U_1) \leftrightarrow U_1 (x_1 - x_1(Q)) + U_0(x_2 - x_2(Q)) =0 $$
 For $m = 2, 3$, we define polynomials 
 $$ T^m g(U_0, U_1) = \sum_{r + s = m} \frac{\p^m g}{\p x_1^r x_2^s}(Q) U_0^r U_1^s \in \kappa[U_0, U_1]$$
-which are homogeneous in $U_0, U_1$. If $T^2 g(U_0, U_1) \equiv 0$, then the tangent cone of $C$ at $Q$ must have degree $3$, in which case $C$ must be a triple line. Otherwise, $T^2 g(x_1 - x_1(Q), x_2 - x_2(Q)) = 0$ describes the (affine) tangent cone of $C$ at $Q$, which we denote by $TC_Q(C)$. $TC_Q(C)$ contains a double line if and only if $T^2 g(U_0, U_1)$ vanishes a closed point in $\IP^1 = \Proj \kappa[U_0, U_1]$ with multiplicity $\ge 2$. For convenience, we say a triple line contains a double line, and if $T^2 g(U_0, U_1) \equiv 0$, it vanishes at all points in $\Proj \kappa[U_0, U_1]$ with $\infty$ multiplicity. Taylor expansion of $g$ at $Q$ says
+which are homogeneous in $U_0, U_1$. If $T^2 g(U_0, U_1) \equiv 0$, then the tangent cone of $C$ at $Q$ must have degree $3$, in which case $C$ must be a triple line, a line + double line, concurrent lines, or three lines. Otherwise, $T^2 g(x_1 - x_1(Q), x_2 - x_2(Q)) = 0$ describes the (affine) tangent cone of $C$ at $Q$, which we denote by $TC_Q(C)$. $TC_Q(C)$ contains a double line if and only if $T^2 g(U_0, U_1)$ vanishes at a closed point in $\IP^1 = \Proj \kappa[U_0, U_1]$ with multiplicity $\ge 2$. For convenience, we say a triple line contains a double line, and if $T^2 g(U_0, U_1) \equiv 0$, it vanishes at all points in $\Proj \kappa[U_0, U_1]$ with $\infty$ multiplicity. Taylor expansion of $g$ at $Q$ says
 $$ g = T^2 g(x_1 - x_1(Q), x_2 - x_2(Q)) + T^3 g(x_1 - x_1(Q), x_2 - x_2(Q)) $$
 we see that the $TC_Q(C)$ shares an irreducible component with $C$ if and only if there $T^2 g(U_0, U_1)$ and $T^3 g(U_0, U_1)$ share a zero on $\Proj \kappa[U_0, U_1]$. Therefore if we fix a particular closed point in $\Proj \kappa[U_0, U_1]$, then both conditions on $T^m(U_0, U_1)$ become linear in partial derivatives.
 
@@ -537,7 +554,7 @@ These statements are weaker than our observations, but they suffice for our purp
 
 
 \subsubsection{Counting Plane Cubics of Different Types}
-In this section we count the number of reducible, cuspidal and nodal cubics in the projective plane $\IP^2$ over a finite field $\IF_q$. Plane cubics are given by sections in $S = H^0(\IP^2, \sO(3))$. We may identify $S$ with the subset of $\IF_q[X_0, X_1, X_2]$ consisting of homogeneous polynomials of degree $3$. Given $f \in S$, we denote its vanishing locus by $Z(f)$. Define 
+In this section we count the number of reducible, cuspidal and nodal cubics in the projective plane $\IP^2$ over a finite field $\IF_q$. Plane cubics are given by sections in $S = H^0(\IP^2, \sO(3))$. We may identify $S$ with the subset of $\IF_q[X_0, X_1, X_2]$ consisting of homogeneous polynomials of degree $3$. Given $f \in S$, we denote its vanishing locus in $\IP^2$ by $Z(f)$. Define 
 \begin{align*}
 R &= \{ f \in S : Z(f) \textit{ is reducible} \} \\
 C &= \{ f \in S : Z(f) \textit{ is cuspidal} \} \\
@@ -545,7 +562,7 @@ N &= \{ f \in S : Z(f) \textit{ is nodal} \}
 \end{align*}
 
 Let $H_j \subseteq \IF_q[U_0, U_1]$ denote the set of homogeneous polynomials of degree $j$. Given $g \in H_j$, denote its vanishing locus in $\IP^1 = \Proj \, \IF_q[U_0, U_1]$ by $Z(g)$. Note that $\dim_{\IF_q} H_j = j + 1$. If $g \in H_j$ and $W \in \IP^1$ is a finite subscheme, let $g|_W$ be the
-element of $H^0(W, \sO_W)$ that on each connected component $W_i$ equals the restriction of $u_i^{-j} g$, where $i$ is the smallest index such that $u_i \neq 0$ at $W_i$. 
+element of $H^0(W, \sO_W)$ that on each connected component $W_i$ equals the restriction of $U_i^{-j} g$, where $i$ is the smallest index such that $U_i \neq 0$ at $W_i$. 
 \begin{lemma} 
 \label{square}
 If $g_2 \in H_2, g_3 \in H_3$ are randomly chosen, then
@@ -563,12 +580,12 @@ $$ \Prob(g_3 \textit{ is coprime to } g_2 \, | \, g_2 \textit{ is not a square})
 \begin{proof}
 Now we have to divide it into two cases. \\
 \textit{Case 1:} $g_2$ is an reducible polynomial, so that $Z(g_2)$ contains two distinct closed points $L_1, L_2$, both of which have to be of degree $1$. $g_3$ is coprime to $g_2$ if and only if $L_1, L_2 \not\in Z(g_3)$. Since $H_3 \to \kappa(L_1) \oplus \kappa(L_2)$ is surjective, events $\{ g_3(L_1) = 0\} $ and $\{ g_3(L_2) = 0 \}$ are independent. Hence
-$$\L_1rob(g_3 \textit{ is a coprime to }g_2 \mid g_2 \textit{ is reducible}) = (1 - q^{-1})^2 $$ By considering pairs $L_1, L_2$, we easily see that 
+$$\Prob(g_3 \textit{ is a coprime to }g_2 \mid g_2 \textit{ is reducible}) = (1 - q^{-1})^2 $$ By counting the number of pairs $(L_1, L_2)$, $L_1 \neq L_2$, we easily see that 
 $$ \# \{ g_2 \in H_2 : g_2 \textit{ is reducible with two distinct roots} \} = \frac{1}{2}q(q + 1)(q - 1)$$
 where the factor $q - 1$ comes from the fact that $g_2$ is determined by $L_1, L_2$ up to scalar multiplication by $\IF_q^\times$. \\
 \textit{Case 2:} $g_2$ is an irreducible polynomial. Then $g_3$ fails to be coprime to $g_2$ if and only if $g_2$ divides $g_3$ if and only if $g_3$ vanishes at $L_2:= Z(g_2)$, which is a closed point of degree $2$. Since $H_3 \to \kappa(L_2)$ given by $g_3 \mapsto g_3|_{L_2}$ is surjective, 
 $$\Prob(g_3 \textit{ is a coprime to }g_2 \mid g_2 \textit{ is irreducible}) = 1 - q^{-2} $$
-By considering possible choices for $L_2$'s, we see that 
+Since there are $(q^2 - q)/2$ possible choices for $L_2$'s and $g_2$ is determined by $L_2$ up to a nonzero constant in $\IF_q$, we see that 
 $$ \# \{ g_2 \in H_2 : g_2 \textit{ is irreducible} \} = \frac{1}{2}(q^2 - q)(q - 1)$$ 
 Therefore the conditional probability in the lemma equals to 
 $$ \frac{q + 1}{2q} (1 - q^{-1})^2 +  \frac{q - 1}{2q} (1 - q^{-2}) =  \frac{1}{q^3}(q + 1)(q - 1)^2 $$
@@ -612,7 +629,7 @@ $$ \frac{1}{q^3} \frac{q^3 - q^2}{q^3} \frac{1}{q^3}(q + 1)(q - 1)^2 = \frac{1}{
 \begin{proof}
 We obtain the number $\# R$ from the obvious $(q - 1)$-to-$1$ surjection 
 $$ (H^0(\IP^2, \sO(1)) - \{ 0 \}) \times (H^0(\IP^2, \sO(2)) - \{ 0 \}) \to R \subset H^0(\IP^2, \sO(3))$$
-$\# C$ and $\# N$ follow directly from Lemma~\ref{mainlemma} and the facts that $\# \IP^2(\IF_q) = (q^2 + q + 1)$ and $\dim_{\IF_q} S = 10$. 
+$\# C$ and $\# N$ follow directly from Lemma~\ref{mainlemma} and the facts that there are $(q^2 + q + 1)$ closed points of degree $1$ in $\IP^2$ over $\IF_q$ and $\dim_{\IF_q} S = 10$. 
 \end{proof}
 
 \subsection{Euler Characteristic}
@@ -763,7 +780,7 @@ $$ O(d^4 q^{-\min(\lfloor n/p \rfloor + 1, j)}) $$
 \end{lemma}
 
 \begin{proof}
-It suffices to show the lemma for an affine chart $\IA^2 \times \IA^1$ since $\IP^2 \times \IP^1$ can be covered by six such charts. Without loss of generality, assume that $U_0, T_0 \neq 0$ on $U = \IA^2 \times \IA^1$ and let $x = X_1/X_0, y = X_2/X_1$ and $t = T_1/T_0$, such that $U = \Spec \IF_q[x, y] \tensor_{\IF_q} \IF_q[t]$. (Identify $S_{3, d}$ with $A_{3, d}$). Following the ideas presented in section~\ref{classification}, it suffices to bound the density of $f \in A_{3, d}$ such that there exists a closed point $Q \in \IA^2 \times \IA^1$ that satisfies the following three conditions
+It suffices to show the lemma for an affine chart $\IA^2 \times \IA^1$ since $\IP^2 \times \IP^1$ can be covered by six such charts. Without loss of generality, assume that $X_0, T_0 \neq 0$ on $U = \IA^2 \times \IA^1$ and let $x = X_1/X_0, y = X_2/X_1$ and $t = T_1/T_0$, such that $U = \Spec \IF_q[x, y] \tensor_{\IF_q} \IF_q[t]$. (Identify $S_{3, d}$ with $A_{3, d}$). Following the ideas presented in section~\ref{classification}, it suffices to bound the density of $f \in A_{3, d}$ such that there exists a closed point $Q \in \IA^2 \times \IA^1$ that satisfies the following three conditions
 \begin{enumerate}
 \item $P := \pi(Q)$ has degree $> j$. 
 \item $f(Q) = f_x(Q) = f_y(Q) = 0$
@@ -771,7 +788,7 @@ It suffices to show the lemma for an affine chart $\IA^2 \times \IA^1$ since $\I
 \end{enumerate}
 
 To bound the density of polynomials of Type \uppercase\expandafter{\romannumeral1} or Type \uppercase\expandafter{\romannumeral2}, we are naturally led to consider the scheme $\Proj \IF_q[U_0, U_1] \times \IA^2 \times \IA^1$. \\\\
-\textbf{Type \uppercase\expandafter{\romannumeral1}: } $f$ is of Type I if and only if there exists a closed point $Q'$ in the subscheme
+\textbf{Type \uppercase\expandafter{\romannumeral1}: } $f$ is of Type I only if there exists a closed point $Q'$ in the subscheme
 $$ W_0 := \{f = f_x = f_y = T^2 f = T^3 f = 0\} \subseteq \Proj \IF_q[U_0, U_1] \times \IA^2 \times \IA^1 $$
 such that $\deg \pi(Q') \ge j$, where we still denote the projection to the last $\IA^1$ component by $\pi$. 
 
@@ -786,6 +803,7 @@ We call a point $Q' \in \Proj \IF_q[U_0, U_1] \times \IA^2 \times \IA^1$ \textit
 
 Following Poonen's idea, we write $f$ in a form so that the derivatives involved are largely independent. If $h \in A_{3, d}$, $g_i \in A_{0, \yk}$ for $0 \le i \le 4$ uniformly and independently at random, then the distribution of 
 $$ f = h + g_4^p x^3  + g_3^p y^2 + g_2^p x + g_1^p y + g_0^p  $$ 
+is also uniform over $A_{3, d}$. 
 Direct compution shows 
 \begin{align*}
 T^3 f &= u^3(h_{xxx} + 6 g_4^p) + 3 u^2 h_{x^2 y} + 3 u h_{xy^2} + h_{yyy} \\
@@ -803,7 +821,7 @@ As the reader may check, we deliberately set up the supscripts so that for each 
 \item $\dim (W_1)_\ad = 0$
 \item $f$ does not vanish at any of $\Irr (W_1)_\ad$. 
 \end{enumerate} 
-Clearly if $E$ holds for $f$, then $W_0$ does not contain any addmissible point. Therefore it suffices to show that for a randomly chosen $f \in A_{3, d}$,
+Clearly if $E$ holds for $f$, then $W_0$ does not contain any addmissible point. Therefore it suffices to show that for randomly chosen $h, g_1, \cdots, g_4$,
 $$ \Prob(E) = 1 - O(d^4 q^{- \min(\yk + 1, j)})$$
 \textit{Step 1:} Conditioned on a choice of $h$, the probability that $\dim W_4 = 4$ is at most $q^{-(\yk + 1)}$. \\
 \textit{Proof of Step 1: }Indeed, $\dim W_4 = 4$ if only if $T^3 f$ vanish identically on $U$, which happens only when $T^3 f = 0$ as a polynomial in $\IF_q[u, x, y, t]$, and in particular $h_{xxx} + 6 g_4^p = 0$. For each $h$, there is at most one choice for $g_4$ such that $h_{xxx} + 6 g_4^p = 0$, and hence the claim follows. \\\\
@@ -830,7 +848,7 @@ $$ W_0' = \{ f = f_x = f_y = T^2 f = (T^2 f)_u = 0 \} \subseteq U' $$
 with $\deg \pi(Q') \ge j$. 
 The rest of the arguments is rather analogous to what we did before, so we only give a sketch. We define 
 \begin{align*}
-W'_4 &= \{ (T^2 f)_u = 0 \}, W'_3 = W_4 \cap \{ T^2 f = 0 \} \\
+W'_4 &= \{ (T^2 f)_u = 0 \}, W'_3 = W_4' \cap \{ T^2 f = 0 \} \\
 W'_2 &= W'_3 \cap \{ f_x = 0 \}, W'_1 = W'_2 \cap \{ f_y = 0 \}
 \end{align*}
 This time we choose $f \in A_{3, d}$ by choosing $h \in A_{3, d}$, $g_i \in A_{0, \yk}$ for $0 \le i \le 4$ uniformly and independently at random and putting 
@@ -872,7 +890,7 @@ Let $P$ be a point of degree $e \le \lfloor d/p \rfloor$ on $\IP^1$. By the proo
 $$ \Prob(f \in \sQ^{\mathrm{high}}) = 0 $$
 \end{lemma}
 \begin{proof}
-Apply Lemma~\ref{elliptichigh} with $j = \fl{d/p}$. Then push $d \to \infty$. 
+Apply Lemma~\ref{elliptichigh} with $j = \fl{d/p}$ and $U = \IP^2 \times \IP^1$. Then push $d \to \infty$. 
 \end{proof}
 
 For each $e_0$, we have 
@@ -890,8 +908,11 @@ converges since
 $$ 1 - \prod_{\deg P = e} \Prob(f \in \sS_P) \le O(q^{-e})$$
 
 \begin{thebibliography}{9}
+\bibitem{expository}
+B. Poonen, \textit{Sieve methods for varieties over finite fields and arithmetic schemes}, J. Théor. Nombres Bordeaux 19 (2007), 221–229.
+
 \bibitem{Pic}
-B. Poonen, An explicit algebraic family of genus-one curves violating the Hasse principle, available at \url{http://www-math.mit.edu/~poonen/}
+B. Poonen, \textit{An explicit algebraic family of genus-one curves violating the Hasse principle}, available at \url{http://www-math.mit.edu/~poonen/}, 
 
 \bibitem{Wood}
 D. Erman and M.M. Wood, \textit{Semiample Bertini theorems over finite fields}, Duke Mathematical Journal 164(2015), no. 1, 1-38
@@ -903,7 +924,8 @@ B. Poonen, \textit{Bertini theorems over finite fields}, Ann. of Math. (2) 160 (
 Robin Hartshorne, \textit{Algebraic geometry}, Springer-Verlag, New York, 1977, Graduate Texts in
 Mathematics, No. 52.
 
-
+\bibitem{stacks-project}
+The Stacks Project Authors, \textit{Stacks Project}, \url{http://stacks.math.columbia.edu}, 2016
 
 
 \end{thebibliography}
