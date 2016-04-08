@@ -204,27 +204,27 @@
 \tableofcontents
 
 \section{Introduction}
-Let $X$ be a non-singular closed subvariety of $\IP^N$ of dimension $m$ over a ground field $\kappa$ . The classical Bertini theorem states that if $\kappa$ is algebrically closed, then for almost all hyperplanes $H$, $H \cap X$ is non-singular. More precisely, the set of all hyperplanes with this property forms an open dense subset of the complete linear system $|\sO_{\IP^N}(1)|$, considered as a projective space.  
+Let $X$ be a non-singular closed subvariety of $\IP^N$ of dimension $m$ over a ground field $\kappa$ . The classical Bertini theorem states that if $\kappa$ is algebraically closed, then for almost all hyperplanes $H$, $H \cap X$ is non-singular. More precisely, the set of all hyperplanes with this property forms an open dense subset of the complete linear system $|\sO_{\IP^N}(1)|$, considered as a projective space.  
 
-The classical Bertini theorem is known to fail for finite fields, as Poonen showed in \cite{Poonen}. However, he used the closed point sieve to yield that the asymptotic density of degree $d$ hypersurfaces that intersect $X$ transversely as $d \to \infty$ is $\zeta_{X}(m + 1)^{-1}$. More precisely, he proved the following theorem:
+The classical Bertini theorem is known to fail for finite fields, as Poonen demonstrated in \cite{Poonen}. However, he used the closed point sieve to show that the asymptotic density of degree $d$ hypersurfaces that intersect $X$ transversely as $d \to \infty$ is $\zeta_{X}(m + 1)^{-1}$. More precisely, if $\sS \subseteq \union_d H^0(\IP^n, \sO(d))$, the asymptotic density of $\sS$, denoted by $\mu(\sS)$, is defined by 
+$$ \mu(\sS) : = \lim_{d \to \infty} \frac{\# \sS \cap H^0(\IP^n, \sO(d))}{\# H^0(\IP^n, \sO(d))}$$
+if it exists, and Poonen proved the following theorem:
 \begin{theorem}
-Let $X$ be a smooth quasiprojective subscheme of $\IP^n$ of dimension $m \ge 0$ over $\IF_q$. Define 
+Let $X$ be a smooth quasi-projective subscheme of $\IP^n$ of dimension $m \ge 0$ over $\IF_q$. Define 
 $$ \sP := \{ f \in \union_{d \ge 0} H^0(\IP^n, \sO(d)) : \{ f = 0 \} \cap X \textit{ is smooth of dimension } m - 1 \}$$
-Then asymptotic density of $\sP$, defined by the limit
-$$ \lim_{d \to \infty} \frac{\# \sP \cap H^0(\IP^n, \sO(d))}{\# H^0(\IP^n, \sO(d))}$$
-if it exists, is $\zeta_X(m + 1)^{-1}$. 
+Then $\mu(\sP) = \zeta_X(m + 1)^{-1}$. 
 \end{theorem}
 
-Poonen employed an analogue of the sieve method in number theory, which he called ``closed point sieve", in the proof of the theorem. We may explain the main idea of his proof here. The condition that $\{ f = 0 \} \cap X$ is singular at a closed point $Q \in X$ amounts to $m + 1$ linear conditions on the coefficients of $f$, since if we dehomogenize $f$ at an affine chart in $\IP^n$ that contains $Q$ to obtain a regular function in the neighborhood of $Q$, then all partial derivatives of this function have to vanish. These linear conditions are over the residue field of $P$. When $d$ is large enough, $f$ has more than $d + 1$ cofficients, the density of $f$ such that $f = 0$ intersects $X$ transversely is $(1 - q^{-(m + 1) \deg Q})$. In fact, let $\sP_{e}$ denote the set $\union_d \{ f \in H^0(\IP^n, \sO(d)) : \{f=0\} \cap X \textit{ is smooth at all }Q \textit{ with } \deg Q \le e \}$, it is not hard to prove that 
+Poonen employed an analogue of the sieve method in number theory, which he called the ``closed point sieve", in the proof of the theorem. We may explain the main idea of his proof here. The condition that $\{ f = 0 \} \cap X$ is singular at a closed point $Q \in X$ amounts to $m + 1$ linear conditions on the coefficients of $f$, since if we dehomogenize $f$ in an affine chart of $\IP^n$ that contains $Q$ to obtain a regular function in the neighborhood of $Q$, then all partial derivatives of this function have to vanish. These linear conditions are over the residue field of $Q$. When $d$ is large enough, $f$ has more than $d + 1$ coefficients, the density of $f$ such that $f = 0$ intersects $X$ transversely at $Q$ is $(1 - q^{-(m + 1) \deg Q})$. In fact, let $\sP_{e}$ denote the set $\union_d \{ f \in H^0(\IP^n, \sO(d)) : \{f=0\} \cap X \textit{ is smooth at all }Q \textit{ with } \deg Q \le e \}$, it is not hard to prove that 
 \begin{align*}
 \mu(\sP_e) = \prod_{Q \in X : \deg Q \le e} (1 - q^{-(m + 1) \deg Q})
 \end{align*}  
-We may guess that $\mu(\sP) = \lim_{d \to \infty} \mu(\sP_e) = \zeta_X(m + 1)$. Indeed, essentially what we need to do is to justify a change of limit
+We may guess that $\mu(\sP) = \lim_{d \to \infty} \mu(\sP_e) = \zeta_X(m + 1)^{-1}$. Indeed, essentially what we need to do is to justify a change of the order of two limits
 $$ \lim_{d \to \infty} \frac{\# \cap_{e = 1}^\infty \sP_e \cap H^0(\IP^n, \sO(d))}{\# H^0(\IP^n, \sO(d))} = \lim_{e \to \infty} \lim_{d \to \infty} \frac{\# \sP_e \cap H^0(\IP^n, \sO(d))}{\# H^0(\IP^n, \sO(d))}$$
-Therefore, the only thing left is to bound the tail terms, and indeed it is the most technical part of the proof. Poonen used a very clever decoupling idea to control the error that arises from ignoring the conditions from points of high degree. 
+Therefore, the only thing left is to bound the tail terms, and indeed this is the most technical part of the proof. Poonen used a very clever decoupling idea to control the error that arises from ignoring the conditions from points of high degree. 
 
 
-In fact, Poonen proved a more general version of the theorem, with which he yielded many new results. He used it to construct conterexamples to the original hyperplane Bertini theorem. He could also construct examples of space-filling and space-avoiding varieties. For example, he proved the following:
+In fact, Poonen proved a more general version of the theorem, with which he demonstrated many new results. He used it to construct counterexamples to the original hyperplane Bertini theorem when the base field is finite. He could also construct examples of space-filling and space-avoiding varieties. For example, he proved the following:
 
 \begin{theorem}
 Let $X$ be a smooth, projective, geometrically integral variety of dimension $m \ge 1$ over $\IF_q$, and let $E$ be a finite extension of $\IF_q$. Then there exists
@@ -235,33 +235,32 @@ Poonen's theorem 1.1 has been generalized by Erman and Wood to semiample divisor
 
 \begin{theorem}
 Let $X$ be a smooth projective variety over $\IF_q$, with a
-very ample divisor $A$ and a globally generated divisor $E$. Let π be the map given by the
+very ample divisor $A$ and a globally generated divisor $E$. Let $\pi$ be the map given by the
 complete linear series on E.
 $$ \pi : X \stackrel{|E|}{\to} \IP^M $$
 There exists an $n_0$, depending only on $\dim X$ and $\mathrm{char\,} \IF_q$, such that for $n \ge n_0$, the
-probability of smoothness for a random $D \in |nA + dE|$ as $d \to \infty$ is given by the product of local probabilities taken over the fibers of π:
+probability of smoothness for a random $D \in |nA + dE|$ as $d \to \infty$ is given by the product of local probabilities taken over the fibers of $\pi$:
 $$ \Prob(D \text{ is smooth}) = \prod_{P \in \IP^M} \Prob(D \text{ is smooth at all points of } \pi^{-1}(P)). $$
 The product on the right converges, is zero only if some factor is zero, and is always non-zero for $n$ sufficiently large.
 \end{theorem}
 
 By ``probability", they mean an asymptotic probability, which is defined in the same way that Poonen defined the asymptotic density. 
 
-This thesis studies non-singular hypersurfaces of bidegree $(3, d)$ in $\IP^1 \times \IP^1$ and $\IP^2 \times \IP^1$ over a finite field $\IF_q$. Via the second projection to $\IP^1$, these hypersurfaces can viewed as $\IP^1$-families of three colinear points and plane cubics respectively. Due to topological constraints, these families will inevitably contain some singular fibers. We may ask for the density of those families whose fibers have at worst the simplest type of singularity. We borrow techniques from \cite{Wood} to show that we can express this density as an infinite product taken over all closed points in $\IP^1$. However, we need to make some nontrivial adjustments to the sieve method to bound the error terms in our case. In particular, in the study of hypersurfaces of bidegree $(3, d)$ in $\IP^2 \times \IP^1$, we employ the basic idea of \textit{linearization}.
+This thesis studies non-singular hypersurfaces of bidegree $(3, d)$ in $\IP^1 \times \IP^1$ and $\IP^2 \times \IP^1$ over a finite field $\IF_q$. Via the second projection to $\IP^1$, these hypersurfaces can viewed as $\IP^1$-families of three collinear points and plane cubics respectively. Due to topological constraints, these families will inevitably contain some singular fibers. We may ask for the density of those families whose fibers have at worst the simplest type of singularity. We borrow techniques from \cite{Wood} to show that we can express this density as an infinite product taken over all closed points in $\IP^1$. However, we need to make some nontrivial adjustments to the sieve method to bound the error terms in our case. In particular, in the study of hypersurfaces of bidegree $(3, d)$ in $\IP^2 \times \IP^1$, we employ the basic idea of \textit{linearization}.
 
 In \cite{expository}, Poonen proposed a principle that ``If an existence result about polynomials
 or $n$-tuples of polynomials over an infinite field can be proved by dimension counting,
-then a corresponding result over finite fields can be proved by the closed point sieve." Both our results conform this principle. The author hopes that these results will be of some use to inspire the formulation of some meta-theorems that make this principle precise.  
+then a corresponding result over finite fields can be proved by the closed point sieve." Both our results conform to this principle. The author hopes that these results will be of some use to inspire the formulation of some meta-theorems that make this principle precise.  
 
 
 \section{Simply Ramified Curves in $\IP^1 \times \IP^1$}
 \label{simplify-ramified}
 \subsection{Introduction}
 Among other things, Erman and Wood showed that for fixed $n \ge 3$, over a finite field $\kappa = \IF_q$, the asymptotic probability for a randomly chosen curve in $\IP^1 \times \IP^1$ of bidegree $(n, d)$ to be non-singular is $\zeta_{\IP^1_{\IF_q}}(2)^{-1}\zeta_{\IP^1_{\IF_q}}(3)^{-1}$ as $d \to \infty$ [\cite{Wood}, Theorem 9.5].
-In this section, we attempt to study ramifications of these curves with respect to the second projection $\pi: \IP^1 \times \IP^1 \to \IP^1$. When $n \ge 2, d > 1$, a non-singular curve $C$ of bidegree $(n, d)$ has genus $nd - n - d + 1 >  0$ [\cite{Hartshorne}, Chapter \uppercase\expandafter{\romannumeral3} Exercise 5.6 (c)], and hence by Riemann-Hurwitz theorem, $\pi : C \to \IP^1$ is necessarily ramified. 
+In this section, we attempt to study ramifications of these curves with respect to the second projection $\pi: \IP^1 \times \IP^1 \to \IP^1$. When $n \ge 2, d > 1$, a non-singular curve $C$ of bidegree $(n, d)$ has genus $nd - n - d + 1 >  0$ [\cite{Hartshorne}, Chapter \uppercase\expandafter{\romannumeral3} Exercise 5.6 (c)], and hence by Riemann-Hurwitz theorem, $\pi : C \to \IP^1$ is necessarily ramified. In other words, if we view the curve $C$ as a $\IP^1$-family of three collinear points via $\pi$, then $C$ necessarily contains singular fibers.  
 
 Nonetheless we can show that if the ground field $\kappa$ is algebraically closed, then for a sufficiently general choice of $C$, the ramification of $\pi : C \to \IP^1$ is simple. Moreover, the set of the curves with this property forms a dense subset of $|\sO_{\IP^1 \times \IP^1}(n, d)|$, viewed as a projective space. Then we borrow techniques from papers \cite{Poonen} and \cite{Wood} to show that when $\kappa = \IF_q$ with $p = \mathrm{char}\, \IF_q > 2$ and $n = 3$, the asymptotic probability for a randomly chosen curve in the divisor class $|\sO_{\IP^1 \times \IP^1}(3, d)|$ to be simply ramified with respect to $\pi$ is $\zeta_{\IP^1_{\IF_q}}(2)^{-2}$ as $d \to \infty$. 
-
-I am currently working to generalize these results by replacing $\IP^1 \times \IP^1$ with a more general ruled surface.   
+ 
 
 
 \paragraph{Notation} 
@@ -271,13 +270,13 @@ where $f$ and $f_d$ are randomly chosen from $\union_{d} R_{n, d}$ and $R_{n, d}
 
 In general, if $Y$ is a scheme and $Q$ is a closed point in $Y$, we use $Q^{(2)}$ to denote the first-order infinitesimal neighborhood of $Q$ in $Y$. The residue field of $Q$ is denoted by $\kappa(Q)$.
 
-\subsection{An analogue of Bertini's theorem} 
+\subsection{An Analogue of Bertini's Theorem} 
 Given a point $f \in |\sO_X(n,d)|$, viewed as a projective space, we denote the corresponding hypersurface by $H_f$. 
 \begin{theorem}
 Let $n \ge 3$. When $\kappa$ is algebraically closed, then for almost all $f \in |\sO_X(n,d)|$, $H_f$ is simply ramified. More precisely, the set of sections $f \in |\sO_X(n, d)|$ for which $H_f$ is not simply ramified is contained in a proper closed subscheme of $|\sO_X(n, d)|$. 
 \end{theorem} 
 \begin{proof}
-Recall that non-singularity is an open condition. Let $N$ denote the open subscheme parametrizing those non-singular curves. A non-singular curve fails to be simply ramified if and only if it falls into at least one of the following two types: 
+Recall that non-singularity is an open condition. Let $N$ denote the open subscheme that parametrizes those non-singular curves. A non-singular curve fails to be simply ramified if and only if it falls into at least one of the following two types: 
 
 \begin{enumerate}[I.]
 \item $e_Q(H_f) \ge 3$ for some $Q \in X$. 
@@ -294,7 +293,7 @@ Therefore we have checked locally that $B_1$ is closed in $X \times N$. We may h
 where we are still using the identification (\ref{ident}). For $Q$ that lies in $(\IA^1 \times \IA^1) \times (\IA^1 \times \IA^1)$, the equation $t = t'$ describes the condition that $\pi(Q)= \pi(Q')$ and the others describe the condition that $e_{Q}(H_f), e_{Q'}(H_f) \ge 2$.  Now we have checked that $B_2'$ is closed, so we may give $B_2'$ a reduced induced scheme structure. Define $$B_2 := B_2' \cap (X \times X - \Delta) \times |\sO_X(n, d)|$$ where $\Delta \subset X \times X$ is the diagonal. Let $p_1 : B_2 \to X \times X - \Delta$ be the first projection. If $(Q', Q) \in p_1(B_2) \subseteq X \times X - \Delta$ is a closed point, then $f(Q) = f(Q') = f_s(Q) = f_{s'}(Q') = 0$ amounts to $4$ linear equations on $(a_{ij})$. Since we deliberately ensured $Q \neq Q'$, these equations are linearly independent. Therefore the fiber $p_1^{-1}(Q', Q)$ is the intersection of $N$ with some projective subspace of $|\sO_X(n, d)|$ of codimension $4$. On the other hand, $\dim p_1(B_2) = 3$ since $p_1(B_2)$ is just $\{ t_0 t_1' = t_1 t_0' \} - \Delta \subseteq X \times X$, which has dimension $3$. Therefore we see that $\dim B_2 = (\dim |\sO_X(n, d)| - 4) + 3 = \dim |\sO_X(n, d)| -1$. Type \uppercase\expandafter{\romannumeral2} curves are clearly contained in the image of $B_2$ under the projection to $|\sO_X(n, d)|$, and hence contained in a proper closed subscheme of $|\sO_X(n, d)|$.
 \end{proof}
 
-\subsection{A density result over finite fields}
+\subsection{A Density Result over Finite Fields}
 \begin{theorem}
 \label{main}
 Suppose $p = \mathrm{char } \IF_q > 2$. Let $\sD \subset \union_d R_{3,d}$ be the subset of sections $f$ such that $H_f$ is simply ramified with respect to $\pi$. Then
@@ -306,7 +305,7 @@ For convenience, we say $f \in R_{n, d}$ is ``good" at $Q \in X$, if $H_f$ is no
 \sQ_{e_0}^{\mathrm{med}} &= \union_{d \ge 0} \{f \in R_{3, d} : f \textit{ is bad at some $Q$, }\deg \pi(Q) \in [e_0, \lfloor d/p \rfloor]\}\\
 \sQ^{\mathrm{high}} &= \union_{d \ge 0} \{f \in R_{3, d} : f \textit{ is bad at some $Q$, }\deg \pi(Q) > d/p\}
 \end{align*}
-\subsubsection{Low and medium degree points}
+\subsubsection{Points of Low and Medium Degree}
 We first do some local analysis on a fiber. Let $P \in \IP^1 = \Proj \, \IF_q[t_0, t_1]$ be a closed point. Without loss of generality, we assume $t_1 \neq 0$ at $P$ and $P$ lies in $\IA^1 = \Spec \IF_q[t]$ where $t = t_0/t_1$.   Let $\fm = (r(t))\subseteq \IF_q[t]$ be the maximal ideal corresponding to $P$, so that $\kappa(P) = \IF_q[t]/\fm, P^{(2)} = \Spec \IF_q[t]/\fm^2$ and $X_P = \IP^1_{\IF_q[t]/\fm} \subset X$. Denote the reduction map $\IF_q[t]/\fm^2 \to \IF_q[t]/\fm$ by $g \mapsto \overline{g}$. We extend it to a map $$ H^0(\IP^1_{\IF_q[t]/\fm^2}, \sO(3)) \to H^0(\IP^1_{\IF_q[t]/\fm}, \sO(3))$$ by applying $\IF_q[t]/\fm^2 \to \IF_q[t]/\fm$ to coefficients of cubic polynomials. Let $$\varphi_P : R_{3, d} \to H^0(\IP^1_{\IF_q[t]/\fm^2}, \sO(3))$$ be the restriction map. $H_f$ is non-singular at a point $Q \in X_P$ if and only if $\varphi_P(f)$ does not vanish at $Q^{(2)} \in \IP^1_{\IF_q[t]/\fm^2}$. If $H_f$ is non-singular at $Q$, then $e_Q(H_f) < 3$ if and only if $\wb{\varphi_P(f)} \in H^0(\IP^1_{\IF[t]/\fm}, \sO(3))$ does not have a zero of multiplicity $\ge 3$ at $Q$ . Therefore we can determine if $f$ is good at all points in $(H_f)_P$ by looking at the image of $f$ in $H^0(\IP^1_{\IF_q[t]/\fm^2}, \sO(3))$. This observation yields an independence result across fibers. More precisely, we have 
 
 \begin{lemma}
@@ -383,7 +382,7 @@ Let $P$ be a point of degree $e \le \lfloor d/p \rfloor$ on $\IP^1$. By the proo
 \end{align*} 
 \end{proof}
 
-\subsubsection{High degree points}
+\subsubsection{Points of High Degree}
 \begin{lemma}
 \label{highprep}
 Let $W \subseteq \IA^M \times \IA^1$ be a closed subscheme. Let $t$ be the coordinate for $\IA^1$. Denote by $A_{0, d} = \IF_q[t]_{\le d}$ the set of polynomials that are of degree $\le d$ in $t$. Let $\pi : \IA^M \times \IA^1 \to \IA^1$ be second projection. Consider the restriction map 
@@ -484,7 +483,7 @@ The statement on the conditional probability in Theorem~\ref{main} now follows d
 \subsection{Introduction}
 In this section we study non-singular hypersurfaces in $\IP^2 \times \IP^1$ given by sections in $H^0(\IP^2 \times \IP^1, \sO(3, d))$. Such a surface can be viewed as a $\IP^1$-family of plane cubics that may contain degenerate (singular) fibers.
 
-We first discuss some geometric properties. In the space $\IP H^0(\IP^2, \sO(3))$ which parametrizes plane cubics, curves with worse than nodal singularities (reducible or cuspidal) comprise a closed subset of codimension $2$. A $\IP^1$-family of plane cubics corresponds to a morphism $\IP^1 \to \IP H^0(\IP^2, \sO(3))$. A Bertini type argument shows that those non-singular hypersurpfaces whose fibers have at most nodal singularities comprise an open dense subset of the parameter space $\IP H^0(\IP^2 \times \IP^1, \sO(3, d)) \iso \IP^9$. We say these hypersurfaces are \textit{``good"}. When the base field $\kappa$ is infinite, we see that the density of good hypersurfaces is $1$.
+We first discuss some geometric properties. In the space $\IP H^0(\IP^2, \sO(3))$ which parametrizes plane cubics, curves with worse than nodal singularities (reducible or cuspidal) comprise a closed subset of codimension $2$. A $\IP^1$-family of plane cubics corresponds to a morphism $\IP^1 \to \IP H^0(\IP^2, \sO(3))$. A Bertini type argument shows that those non-singular hypersurfaces whose fibers have at most nodal singularities comprise an open dense subset of the parameter space $\IP H^0(\IP^2 \times \IP^1, \sO(3, d)) \iso \IP^9$. We say these hypersurfaces are \textit{``good"}. When the base field $\kappa$ is infinite, we see that the density of good hypersurfaces is $1$.
 
 However, when $\kappa = \IF_q$ is a finite field, $H^0(\IP^2 \times \IP^1, \sO(3, d))$ is a finite set, so sections that do not give good hypersurfaces may have a nonzero density. \textit{In the rest of this section, we assume that $\mathrm{char\,}\IF_q > 3$}. In a similar vein to section~\ref{simplify-ramified}, we may show that as $d \to \infty$, this density converges to an infinite product over $\IP^1$. We may explicitly compute the terms in this infinite product and then show that this infinite product converges. Before introducing the result, we first introduce some notations. 
 
@@ -541,13 +540,13 @@ which are homogeneous in $U_0, U_1$. If $T^2 g(U_0, U_1) \equiv 0$, then the tan
 $$ g = T^2 g(x_1 - x_1(Q), x_2 - x_2(Q)) + T^3 g(x_1 - x_1(Q), x_2 - x_2(Q)) $$
 we see that the $TC_Q(C)$ shares an irreducible component with $C$ if and only if there $T^2 g(U_0, U_1)$ and $T^3 g(U_0, U_1)$ share a zero on $\Proj \kappa[U_0, U_1]$. Therefore if we fix a particular closed point in $\Proj \kappa[U_0, U_1]$, then both conditions on $T^m(U_0, U_1)$ become linear in partial derivatives.
 
-We may summarize the above observations into a geometric statement: Let $\IA^2 \subseteq \IP^2$ be the affine chart as above. Consider two subschems of $\IA^2 \times \Proj \kappa[U_0, U_1]$: 
+We may summarize the above observations into a geometric statement: Let $\IA^2 \subseteq \IP^2$ be the affine chart as above. Consider two subschemes of $\IA^2 \times \Proj \kappa[U_0, U_1]$: 
 \begin{align*}
 \sW_1 &= \{ g = \frac{\p g}{\p x_1} = \frac{\p g}{\p x_2} = T^2 g(U_0, U_1) = 0 \\
 \sW_2 &= \{ g = \frac{\p g}{\p x_1} = \frac{\p g}{\p x_2} = T^2 g(U_0, U_1) = T^3 g(U_0, U_1) = 0 \} \\
 \end{align*} 
 \begin{enumerate}
-\item If there does not exist a closed point $Q \in \IA^2$ such that the fiber of $\sW_1$ over $Q$ is nonreduced, then $C$ cannot be a cuspidal curve with the singularity in this affine chart $\IA^2$. 
+\item If there does not exist a closed point $Q \in \IA^2$ such that the fiber of $\sW_1$ over $Q$ is non-reduced, then $C$ cannot be a cuspidal curve with the singularity in this affine chart $\IA^2$. 
 \item If $\sW_2 = \emptyset$, then $C$ cannot be a reducible curve with a singularity in this affine chart $\IA^2$. 
 \end{enumerate}
 These statements are weaker than our observations, but they suffice for our purposes. We are going to use them in the proof of Lemma~\ref{elliptichigh}. 
@@ -580,11 +579,11 @@ $$ \Prob(g_3 \textit{ is coprime to } g_2 \, | \, g_2 \textit{ is not a square})
 \begin{proof}
 Now we have to divide it into two cases. \\
 \textit{Case 1:} $g_2$ is an reducible polynomial, so that $Z(g_2)$ contains two distinct closed points $L_1, L_2$, both of which have to be of degree $1$. $g_3$ is coprime to $g_2$ if and only if $L_1, L_2 \not\in Z(g_3)$. Since $H_3 \to \kappa(L_1) \oplus \kappa(L_2)$ is surjective, events $\{ g_3(L_1) = 0\} $ and $\{ g_3(L_2) = 0 \}$ are independent. Hence
-$$\Prob(g_3 \textit{ is a coprime to }g_2 \mid g_2 \textit{ is reducible}) = (1 - q^{-1})^2 $$ By counting the number of pairs $(L_1, L_2)$, $L_1 \neq L_2$, we easily see that 
+$$\Prob(g_3 \textit{ is coprime to }g_2 \mid g_2 \textit{ is reducible}) = (1 - q^{-1})^2 $$ By counting the number of pairs $(L_1, L_2)$, $L_1 \neq L_2$, we easily see that 
 $$ \# \{ g_2 \in H_2 : g_2 \textit{ is reducible with two distinct roots} \} = \frac{1}{2}q(q + 1)(q - 1)$$
 where the factor $q - 1$ comes from the fact that $g_2$ is determined by $L_1, L_2$ up to scalar multiplication by $\IF_q^\times$. \\
 \textit{Case 2:} $g_2$ is an irreducible polynomial. Then $g_3$ fails to be coprime to $g_2$ if and only if $g_2$ divides $g_3$ if and only if $g_3$ vanishes at $L_2:= Z(g_2)$, which is a closed point of degree $2$. Since $H_3 \to \kappa(L_2)$ given by $g_3 \mapsto g_3|_{L_2}$ is surjective, 
-$$\Prob(g_3 \textit{ is a coprime to }g_2 \mid g_2 \textit{ is irreducible}) = 1 - q^{-2} $$
+$$\Prob(g_3 \textit{ is coprime to }g_2 \mid g_2 \textit{ is irreducible}) = 1 - q^{-2} $$
 Since there are $(q^2 - q)/2$ possible choices for $L_2$'s and $g_2$ is determined by $L_2$ up to a nonzero constant in $\IF_q$, we see that 
 $$ \# \{ g_2 \in H_2 : g_2 \textit{ is irreducible} \} = \frac{1}{2}(q^2 - q)(q - 1)$$ 
 Therefore the conditional probability in the lemma equals to 
@@ -677,7 +676,7 @@ For a fixed $e_0 \in \IN$, we define
 \subsubsection{Points of Low and Medium Degree}
  
 
-We first do some local analysis on a fiber. Let $P \in \IP^1$ be a fixed point and let $e = \deg P$. Let $r(s) \in \IF_q[s]$ be an irreducible polynomial such that the second infinitestimal neighborhood $P^{(2)} = \Spec \IF_q[s]/r(s)^2$. Let $B := \IF_q[s]$ and $\fm := (r(s)) \subseteq B$ be the maximal ideal. Denote the restriction map $B/\fm^2 \to B/\fm$ by $g \mapsto \overline{g}$ and extend it to a map $H^0(\IP^2_{B/\fm^2}, \sO(3)) \to H^0(\IP^2_{B/\fm}, \sO(3))$ by applying the reduction map to each coefficient. Similarly we denote a $\IF_q$-linear section of the reduction map $B/\fm^2 \to B/\fm$ by $h \to \wt{h}$\footnote{I want to specify this map as: for each $f \in B/\fm$ there is a unique representative with degree $\le \deg r(s)$, interpret it as an element in $B/\fm^2$.} and extend it to a map $H^0(\IP^2_{B/\fm}, \sO(3)) \to H^0(\IP^2_{B/\fm^2}, \sO(3))$. Let $\varphi_P : S_{3, d} \to H^0(\IP^2_{B/\fm^2}, \sO(3))$ be the restriction map. $H_f$ is non-singular at a point $Q \in \pi^{-1}(P)$ if and only if $\varphi_P(f)$ does not vanish at $Q^{(2)} \in \IP^2_{B/\fm^2}$. 
+We first do some local analysis on a fiber. Let $P \in \IP^1$ be a fixed point and let $e = \deg P$. Let $r(s) \in \IF_q[s]$ be an irreducible polynomial such that the second infinitesimal neighborhood $P^{(2)} = \Spec \IF_q[s]/r(s)^2$. Let $B := \IF_q[s]$ and $\fm := (r(s)) \subseteq B$ be the maximal ideal. Denote the restriction map $B/\fm^2 \to B/\fm$ by $g \mapsto \overline{g}$ and extend it to a map $H^0(\IP^2_{B/\fm^2}, \sO(3)) \to H^0(\IP^2_{B/\fm}, \sO(3))$ by applying the reduction map to each coefficient. Similarly we denote a $\IF_q$-linear section of the reduction map $B/\fm^2 \to B/\fm$ by $h \to \wt{h}$\footnote{I want to specify this map as: for each $f \in B/\fm$ there is a unique representative with degree $\le \deg r(s)$, interpret it as an element in $B/\fm^2$.} and extend it to a map $H^0(\IP^2_{B/\fm}, \sO(3)) \to H^0(\IP^2_{B/\fm^2}, \sO(3))$. Let $\varphi_P : S_{3, d} \to H^0(\IP^2_{B/\fm^2}, \sO(3))$ be the restriction map. $H_f$ is non-singular at a point $Q \in \pi^{-1}(P)$ if and only if $\varphi_P(f)$ does not vanish at $Q^{(2)} \in \IP^2_{B/\fm^2}$. 
 
 
 Consider the vector space $H^0(\IP^2_{\IF_{q^e}}, \sO(3))^2$, we say that a pair $(F_1, F_2)$ is good if, it satisfies one the following conditions:
@@ -691,7 +690,7 @@ This terminology is explained by the following lemma, which is an analogous stat
 The map
 $$ \varphi : H^0(\IP^2_{B/\fm} , \sO(3))^2 \to H^0(\IP^2_{B/\fm^2}, \sO(3))$$ defined by 
 $$ (F_1, F_2) \mapsto \wt{F_1} + r(s) F_2 $$
-is an isomorphism of vector spaces. Moveover, $f$ is good at $P$ if and only if $\varphi_P(f)$ in $H^0(\IP^2_{B/\fm} , \sO(3))^2$ is a good pair. 
+is an isomorphism of vector spaces. Moreover, $f$ is good at $P$ if and only if $\varphi_P(f)$ in $H^0(\IP^2_{B/\fm} , \sO(3))^2$ is a good pair. 
 \end{lemma}
 \begin{proof}
 The above map has an inverse $F \mapsto (\overline{F}, (F - \wt{\overline{F}}))/r(s))$. For $f$ to be good at $P$, we need $\overline{\varphi_P(f)}$ to describe a non-singular or nodal curve. Let $Q \in \IP^2_{B/\fm^2}$ be a closed point and suppose $\varphi_P(f)$ corresponds to $(F_1, F_2)$. If $F_1$ is non-singular at $Q$, then $H_f$ must also be non-singular at $Q$. Otherwise, $H_f$ is non-singular at $Q$ if and only if $F_2$ does not vanish at $Q$. 
@@ -756,7 +755,7 @@ $$ 1 - \sum_{j = 1}^4 \Prob(E_j) $$
 
 
 \subsubsection{Points of High Degree}
-We are going to bound the probability that a randomly chosen $f \in S_{3, d}$ is bad at some point $P$ with high degree $(> \lfloor n/p \rfloor)$. Therefore the following lemmas is to be applied with $j = \lfloor n/p \rfloor$. The main idea used here has been explained in section~\ref{classification}.
+We are going to bound the probability that a randomly chosen $f \in S_{3, d}$ is bad at some point $P$ with high degree $(> \lfloor d/p \rfloor)$. Therefore the following lemmas is to be applied with $j = \lfloor d/p \rfloor$. The main idea used here has been explained in section~\ref{classification}.
 
 Let $A_{3, d} = \IF_q[x, y]\tensor_{\IF_q} \IF_q[t]$. 
 %and $\sB \subseteq \union_d A_{3, d}$ be a subset. We say that the (asymptotic) probability that a randomly chosen $f \in A_{3, d}$ lies in $\sB$ is 
@@ -776,11 +775,11 @@ Let $U$ be an open subscheme of $\IP^2 \times \IP^1$ and $j > 2$ be an integer. 
 \item The fiber $(H_f)_P$ is a cuspidal or reducible cubic with a singularity at $Q$, or the hypersurface $H_f$ has a singularity at $Q$. 
 \end{enumerate}
 is bounded by 
-$$ O(d^4 q^{-\min(\lfloor n/p \rfloor + 1, j)}) $$
+$$ O(d^4 q^{-\min(\lfloor d/p \rfloor + 1, j)}) $$
 \end{lemma}
 
 \begin{proof}
-It suffices to show the lemma for an affine chart $\IA^2 \times \IA^1$ since $\IP^2 \times \IP^1$ can be covered by six such charts. Without loss of generality, assume that $X_0, T_0 \neq 0$ on $U = \IA^2 \times \IA^1$ and let $x = X_1/X_0, y = X_2/X_1$ and $t = T_1/T_0$, such that $U = \Spec \IF_q[x, y] \tensor_{\IF_q} \IF_q[t]$. (Identify $S_{3, d}$ with $A_{3, d}$). Following the ideas presented in section~\ref{classification}, it suffices to bound the density of $f \in A_{3, d}$ such that there exists a closed point $Q \in \IA^2 \times \IA^1$ that satisfies the following three conditions
+It suffices to show the lemma for an affine chart $\IA^2 \times \IA^1$ since $\IP^2 \times \IP^1$ can be covered by six such charts. Without loss of generality, assume that $X_0, T_0 \neq 0$ on $U = \IA^2 \times \IA^1$ and let $x = X_1/X_0, y = X_2/X_0$ and $t = T_1/T_0$, such that $U = \Spec \IF_q[x, y] \tensor_{\IF_q} \IF_q[t]$. (Identify $S_{3, d}$ with $A_{3, d}$). Following the ideas presented in section~\ref{classification}, it suffices to bound the density of $f \in A_{3, d}$ such that there exists a closed point $Q \in \IA^2 \times \IA^1$ that satisfies the following three conditions
 \begin{enumerate}
 \item $P := \pi(Q)$ has degree $> j$. 
 \item $f(Q) = f_x(Q) = f_y(Q) = 0$
@@ -804,7 +803,7 @@ We call a point $Q' \in \Proj \IF_q[U_0, U_1] \times \IA^2 \times \IA^1$ \textit
 Following Poonen's idea, we write $f$ in a form so that the derivatives involved are largely independent. If $h \in A_{3, d}$, $g_i \in A_{0, \yk}$ for $0 \le i \le 4$ uniformly and independently at random, then the distribution of 
 $$ f = h + g_4^p x^3  + g_3^p y^2 + g_2^p x + g_1^p y + g_0^p  $$ 
 is also uniform over $A_{3, d}$. 
-Direct compution shows 
+Direct computation shows 
 \begin{align*}
 T^3 f &= u^3(h_{xxx} + 6 g_4^p) + 3 u^2 h_{x^2 y} + 3 u h_{xy^2} + h_{yyy} \\
 T^2 f &= u^2(h_{xx} + 6x g_4^p) + 2 u h_{xy} + h_{yy} + 2 g_3^p \\
@@ -821,18 +820,18 @@ As the reader may check, we deliberately set up the supscripts so that for each 
 \item $\dim (W_1)_\ad = 0$
 \item $f$ does not vanish at any of $\Irr (W_1)_\ad$. 
 \end{enumerate} 
-Clearly if $E$ holds for $f$, then $W_0$ does not contain any addmissible point. Therefore it suffices to show that for randomly chosen $h, g_1, \cdots, g_4$,
+Clearly if $E$ holds for $f$, then $W_0$ does not contain any admissible point. Therefore it suffices to show that for randomly chosen $h, g_1, \cdots, g_4$,
 $$ \Prob(E) = 1 - O(d^4 q^{- \min(\yk + 1, j)})$$
 \textit{Step 1:} Conditioned on a choice of $h$, the probability that $\dim W_4 = 4$ is at most $q^{-(\yk + 1)}$. \\
 \textit{Proof of Step 1: }Indeed, $\dim W_4 = 4$ if only if $T^3 f$ vanish identically on $U$, which happens only when $T^3 f = 0$ as a polynomial in $\IF_q[u, x, y, t]$, and in particular $h_{xxx} + 6 g_4^p = 0$. For each $h$, there is at most one choice for $g_4$ such that $h_{xxx} + 6 g_4^p = 0$, and hence the claim follows. \\\\
 \textit{Step 2:} For $k = 3, 2, 1$, conditioned on a choice of $h, g_k, \cdots, g_4$ for which $\dim W_{k + 1} \le k$, the probability that $\dim (W_k)_\ad \ge k$ is at most $O(d^{4 - k} q^{- \min(\yk + 1, j)})$.\\
-\textit{Proof of Step 2: }We only show this for $k = 3$, since the proofs for $k = 2, 1$ are completely analogous. Let $V_1, \cdots, V_\ell$ be all the irreducible components of $(W_4)_\ad$, where $\ell = \# \{\Irr (W_4)_\ad \}$. By Bezout's theorem, $\ell = O(d)$. We need to bound the set 
+\textit{Proof of Step 2: }We only show this for $k = 3$, since the proofs for $k = 2, 1$ are completely analogous. Let $V_1, \cdots, V_\ell$ be all the irreducible components of $(W_4)_\ad$, where $\ell = \# \{\Irr (W_4)_\ad \}$. By B{\`e}zout's theorem, $\ell = O(d)$. We need to bound the set 
 $$ G_i^{\mathrm{bad}} = \{ g_3 \in A_{0, \yk} : T^2 f \textit{ vanishes identically on }V_i \} $$ 
 If $g, g' \in G_i^{\mathrm{bad}}$, then $g - g'$ vanishes identically on $V_i$. Hence if $G_i^{\mathrm{bad}} \neq \emptyset$, it is a coset of the kernel of the linear map 
 $$ \varphi_i : A_{0, \yk} \to H^0(V_i, \sO_{V_i}) $$ 
 Now we apply Lemma~\ref{prep} by identifying $U' = \IA^1 \times \IA^2 \times \IA^1$ with $\IA^3 \times \IA^1$ to obtain that $\# \{ \im \varphi_i \} \ge q^{\min(\yk + 1, j)}$. Therefore the probability that a randomly chosen $g_3$ lies in $G_i^{\mathrm{bad}}$ is at most  $q^{- \min(\yk + 1, j)}$. Since there are $O(d)$ such $V_i$'s, the claim follows. \\\\
 \textit{Step 3: }Conditioned on choice $h, g_4, \cdots, g_1$ such that $\dim (W_1)_\ad = 0$, the probability that $(W_0)_\ad \neq \emptyset$ is at most $O(q^4 q^{- \min(\yk + 1, j)})$. \\
-\textit{Proof of Step 3:} By Bezout's theorem again, we see that $\# \{ W_0 \} = O(d^4)$. For an admissible point $Q \in W_0$, the set $H^{\mathrm{bad}}$ of $g_0 \in A_{0, \yk}$ for which $f$ vanishes at $Q$ forms a coset of the kernel of the map $\varphi_Q : A_{0, \yk} \to H^0(Q, \sO_Q)$. We apply Lemma~\ref{prep} again with $W = Q$ to prove claim 3. \\
+\textit{Proof of Step 3:} By B{\`e}zout's theorem again, we see that $\# \{ W_0 \} = O(d^4)$. For an admissible point $Q \in W_0$, the set $H^{\mathrm{bad}}$ of $g_0 \in A_{0, \yk}$ for which $f$ vanishes at $Q$ forms a coset of the kernel of the map $\varphi_Q : A_{0, \yk} \to H^0(Q, \sO_Q)$. We apply Lemma~\ref{prep} again with $W = Q$ to prove claim 3. \\
 Finally \textit{Step 1} and \textit{2} combined to give that 
 \begin{align*}
 \Prob(\dim (W_1)_\ad) = 0) &\ge (1 - q^{-(\yk + 1)})\prod_{k = 1}^3 (1 - d^k q^{- \min(\yk + 1, j)}) \\
@@ -864,11 +863,11 @@ By applying the same argument as in \textit{Step 1} and \textit{2}, we may show 
 $$ \Prob(\dim(W'_1)_\ad = 0) = 1 - O(d^3 q^{- \min(\yk + 1, j)}) $$
 By applying the same arguments as in \textit{Step 3}, we may bound the probability that $f$ does not vanish at any of the irreducible components of $(W_2')_\ad$ given than $\dim (W'_2)_\ad = 0$, so that 
 $$ \Prob((W_0')_\ad = \emptyset) \ge 1 - O(d^4 q^{- \min(\yk + 1, j)}) $$\\\\
-\textbf{Type \uppercase\expandafter{\romannumeral3}}: This is the easiest case to deal with. There is no need to involve $U_i$'s. The proof is completely analogous to the second part of the proof of Lemma~\ref{prep}, where we treated the case in which the curve $H_f$ has a singularity on $\IA^1 \times \IA^1$, except that we have $\IA^2 \times \IA^1$ instead of $\IA^1 \times \IA^1$ and one more variable in thie case. \\\\ 
+\textbf{Type \uppercase\expandafter{\romannumeral3}}: This is the easiest case to deal with. There is no need to involve $U_i$'s. The proof is completely analogous to the second part of the proof of Lemma~\ref{prep}, where we treated the case in which the curve $H_f$ has a singularity on $\IA^1 \times \IA^1$, except that we have $\IA^2 \times \IA^1$ instead of $\IA^1 \times \IA^1$ and one more variable in this case. \\\\ 
 Now the proof of the lemma is complete. 
 \end{proof}
 
-\subsubsection{Proof of The Main Result}
+\subsubsection{Proof of the Main Result}
 \begin{lemma}
 \label{ellipticmed}
 $$ \lim_{e_0 \to \infty} \Prob( f \in \sQ_{e_0}^{\mathrm{med}}) = 0 $$
@@ -900,7 +899,7 @@ $$ \Prob(f \in \sS) = \prod_{P \in \IP^1_{\IF_q}} \Prob( f \in \sS_P) $$
 
 Recall the following well known lemma:
 \begin{lemma}
-Suppse that $p_e, e = 1, 2, \cdots$ satisfy $0 \le p_e < 1$ and $\sum p_e < \infty$, then $\prod (1 - p_e) > 0$. 
+Suppose that $p_e, e = 1, 2, \cdots$ satisfy $0 \le p_e < 1$ and $\sum p_e < \infty$, then $\prod (1 - p_e) > 0$. 
 \end{lemma}
 By Lemma~\ref{pcount}, the infinite product 
 $$ \prod_{P \in \IP^1_{\IF_q}} \Prob( f \in \sS_P) = \prod_{e = 1}^\infty (\prod_{\deg P = e} \Prob(f \in \sS_P))$$
