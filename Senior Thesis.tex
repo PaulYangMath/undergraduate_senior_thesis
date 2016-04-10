@@ -390,7 +390,7 @@ $$ \varphi_W : A_{0, d} \to H^0(W, \sO_W) $$
 If $W$ contains a closed point $Q$ such that $\deg \pi(Q) \ge j$, then $\# \{ \im \varphi_W \} \ge q^{\min(d + 1, j)}$. 
 \end{lemma}
 \begin{proof}
-If $\dim \pi(W) = 1$, then $t$, and hence all zero polynomials in $t$, does not vanish identically on $W$. Therefore $\varphi_W$ is injective, and $\# \{ \im \varphi_W \} = q^{d + 1}$. 
+If $\dim \pi(W) = 1$, then $t$, and hence all nonzero polynomials in $t$, does not vanish identically on $W$. Therefore $\varphi_W$ is injective, and $\# \{ \im \varphi_W \} = q^{d + 1}$. 
 Now suppose $\dim \pi(W) = 0$. Note that $\varphi_W$ factors as
 $$ A_{0, d} = \IF_q[t]_{\le d} \stackrel{\psi_W}{\to} H^0(\pi(W), \sO_{\pi(W)}) \stackrel{\pi^\#}{\to} H^0(W, \sO_W) $$ 
 Since the pull back map $\pi^\#$ is injective, it suffices to bound $\# \{\im \psi_W \}$. Let $P = \pi(Q)$. Suppose $P = \Spec \IF_q[t]/(r(t)) \subset \IA^1$. Note that $\deg r(t) \ge j$ since by assumption $\deg P \ge j$. The composition 
@@ -462,9 +462,9 @@ Now the proof of the lemma is complete.
 $$\Prob( f \in  \sQ^{\mathrm{high}}) = 0 $$
 \end{lemma}
 \begin{proof}
-Apply Lemma~\ref{prep} with $U = X$ and $j = \lfloor d/p \rfloor$. 
+Apply Lemma~\ref{prep} with $U = X$ and $j = \lfloor d/p \rfloor$. Then we take the limit as $d \to \infty$. 
 \end{proof}
-Now we have gathered all ingredients to prove Theorem~\ref{main}. \\
+Now we have gathered all the ingredients needed to prove Theorem~\ref{main}. \\
 \noindent \textit{Proof of Theorem~\ref{main}.} 
 For each $e_0$, we have that 
 $$  \sP_{e_0}^{\mathrm{low}} \subseteq \sD \subseteq \sP_{e_0}^{\mathrm{low}} \cup \sQ_{e_0}^{\mathrm{med}} \cup \sQ^{\mathrm{high}}$$
