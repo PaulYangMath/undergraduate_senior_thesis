@@ -385,7 +385,7 @@ Let $P$ be a point of degree $e \le \lfloor d/p \rfloor$ on $\IP^1$. By the proo
 \subsubsection{Points of High Degree}
 \begin{lemma}
 \label{highprep}
-Let $W \subseteq \IA^M \times \IA^1$ be a closed subscheme. Let $t$ be the coordinate for $\IA^1$. Denote by $A_{0, d} = \IF_q[t]_{\le d}$ the set of polynomials that are of degree $\le d$ in $t$. Let $\pi : \IA^M \times \IA^1 \to \IA^1$ be second projection. Consider the restriction map 
+Let $W \subseteq \IA^M \times \IA^1$ be a closed subscheme. Let $t$ be the coordinate for $\IA^1$. Denote by $A_{0, d} = \IF_q[t]_{\le d}$ the set of polynomials that are of degree $\le d$ in $t$. Let $\pi : \IA^M \times \IA^1 \to \IA^1$ be the second projection. Consider the restriction map 
 $$ \varphi_W : A_{0, d} \to H^0(W, \sO_W) $$
 If $W$ contains a closed point $Q$ such that $\deg \pi(Q) \ge j$, then $\# \{ \im \varphi_W \} \ge q^{\min(d + 1, j)}$. 
 \end{lemma}
@@ -696,13 +696,13 @@ is an isomorphism of vector spaces. Moreover, $f$ is good at $P$ if and only if 
 The above map has an inverse $F \mapsto (\overline{F}, (F - \wt{\overline{F}}))/r(s))$. For $f$ to be good at $P$, we need $\overline{\varphi_P(f)}$ to describe a non-singular or nodal curve. Let $Q \in \IP^2_{B/\fm^2}$ be a closed point and suppose $\varphi_P(f)$ corresponds to $(F_1, F_2)$. If $F_1$ is non-singular at $Q$, then $H_f$ must also be non-singular at $Q$. Otherwise, $H_f$ is non-singular at $Q$ if and only if $F_2$ does not vanish at $Q$. 
 \end{proof}
 
-The following lemma assumes the same role as lemma~\ref{Low} as in Section~\ref{simplify-ramified}, and the proof is similar. 
+The following lemma assumes the same role as lemma~\ref{Low} in Section~\ref{simplify-ramified}, and the proof is similar. 
 \begin{lemma}
 \label{pointsurj}
 If $\{P_1, P_2, \cdots, P_s\}$ is a set of finitely many closed points in $\IP^1$, then for $f$ randomly chosen from $\union_d S_{3, d}$,
-$$ \Prob(f \textit{ is good at all } P_i) = \prod_{i = 1}^s \Prob( f \textit{ is good at all points } P_i) $$
+$$ \Prob(f \textit{ is good at all } P_i) = \prod_{i = 1}^s \Prob( f \textit{ is good at } P_i) $$
 In particular, we have
-$$\Prob(f \in \sP_{e_0}^{\mathrm{low}})  = \prod_{\deg(P) < e_0}  \Prob( f \textit{ is good at all points } P ) $$
+$$\Prob(f \in \sP_{e_0}^{\mathrm{low}})  = \prod_{\deg(P) < e_0}  \Prob( f \textit{ is good at } P ) $$
 since there are only finitely many points with degree $< e_0$. 
 \end{lemma}
 \begin{proof} 
@@ -712,7 +712,7 @@ which induces an exact sequence
 $$ H^0(X, \sO_X(3, d)) \to H^0(X_W, \sO_X(3, d)|_{X_W}) \to H^1(X, \sO_X(3, d - \delta)) $$
 By K{\"u}nneth formula, 
 $$ H^1(X, \sO_X(3, d - \delta)) \iso \bigoplus_{i + j = 1} H^i(\IP^2, \sO(3))\tensor_{\IF_q} H^j(\IP^1, \sO(d - \delta))   $$
-However, when $d - \delta \ge 0$, Lemma 29.8.1 in \cite[Tag 01XS]{stacks-project} implies $H^1(\IP^2, \sO(3)) = H^1(\IP^1, \sO(d - \delta)) = 0$. 
+When $d - \delta \ge 0$, Lemma 29.8.1 in \cite[Tag 01XS]{stacks-project} implies $ H^1(\IP^1, \sO(d - \delta)) = 0$. We also have $H^1(\IP^2, \sO(3)) = 0$.
 Therefore $H^1(X, \sO_X(3, d - \delta)) = 0$ and the restriction map
 \begin{align*}
 S_{3, d} = H^0(\IP^2 \times \IP^1, \sO(3, d)) \to H^0(X_W, \sO_X(3, d)|_{X_W}) \cong \prod_{i = 1}^s H^0(X_{P_i^{(2)}}, \sO(3))
@@ -750,12 +750,14 @@ It is clear that $\Prob(E_4) = \pmb{q}^{-10}$. The events $E_j$'s are clearly di
 $$ 1 - \sum_{j = 1}^4 \Prob(E_j) $$
 \end{proof}
 
-\noindent \textit{Proof of Lemma~\ref{pcount}}. Lemma~\ref{conversion} and \ref{pointsurj} implies that $\mu(\sS_P)$ is precisely the fraction of good pairs in $H^0(\IP^2_{\IF_{q^e}}, \sO(3))^2$, which is computed in Lemma~\ref{prepcount}. \qed
+\noindent \textit{Proof of Lemma~\ref{pcount}}. The first statement is simply Lemma~\ref{prepcount}. The second inequality in the second statement is obvious. For the first equality, we can numerically verify that 
+$$ 1 - x^{-3/2} < 1 - 2x^{-2} - x^{-4} + x^{-5} - 2x^{-6} - x^{-7} $$
+holds when $x \ge 4.2$. However, we have assumed that $\mathrm{char\,}\IF_q \ge 5$, so the inequality holds in our situation. \qed
 
 
 
 \subsubsection{Points of High Degree}
-We are going to bound the probability that a randomly chosen $f \in S_{3, d}$ is bad at some point $P$ with high degree $(> \lfloor d/p \rfloor)$. Therefore the following lemmas is to be applied with $j = \lfloor d/p \rfloor$. The main idea used here has been explained in section~\ref{classification}.
+We are going to bound the probability that a randomly chosen $f \in S_{3, d}$ is bad at some point $P$ with high degree $(> \lfloor d/p \rfloor)$. Therefore the following lemma is to be applied with $j = \lfloor d/p \rfloor$. The main idea used here has been explained in section~\ref{classification}.
 
 Let $A_{3, d} = \IF_q[x, y]\tensor_{\IF_q} \IF_q[t]$. 
 %and $\sB \subseteq \union_d A_{3, d}$ be a subset. We say that the (asymptotic) probability that a randomly chosen $f \in A_{3, d}$ lies in $\sB$ is 
@@ -779,7 +781,7 @@ $$ O(d^4 q^{-\min(\lfloor d/p \rfloor + 1, j)}) $$
 \end{lemma}
 
 \begin{proof}
-It suffices to show the lemma for an affine chart $\IA^2 \times \IA^1$ since $\IP^2 \times \IP^1$ can be covered by six such charts. Without loss of generality, assume that $X_0, T_0 \neq 0$ on $U = \IA^2 \times \IA^1$ and let $x = X_1/X_0, y = X_2/X_0$ and $t = T_1/T_0$, such that $U = \Spec \IF_q[x, y] \tensor_{\IF_q} \IF_q[t]$. (Identify $S_{3, d}$ with $A_{3, d}$). Following the ideas presented in section~\ref{classification}, it suffices to bound the density of $f \in A_{3, d}$ such that there exists a closed point $Q \in \IA^2 \times \IA^1$ that satisfies the following three conditions
+It suffices to show the lemma for an affine chart $\IA^2 \times \IA^1$ since $\IP^2 \times \IP^1$ can be covered by six such charts. Without loss of generality, assume that $X_0, T_0 \neq 0$ on $U = \IA^2 \times \IA^1$ and let $x = X_1/X_0, y = X_2/X_0$ and $t = T_1/T_0$, such that $U = \Spec \IF_q[x, y] \tensor_{\IF_q} \IF_q[t]$. Hence we may identify $S_{3, d}$ with $A_{3, d}$. Following the ideas presented in section~\ref{classification}, we only have to bound the density of $f \in A_{3, d}$ such that there exists a closed point $Q \in \IA^2 \times \IA^1$ that satisfies the following three conditions
 \begin{enumerate}
 \item $P := \pi(Q)$ has degree $> j$. 
 \item $f(Q) = f_x(Q) = f_y(Q) = 0$
@@ -797,7 +799,7 @@ T^2 f(u, x, y, t) &= f_{xx} u^2 + 2 f_{xy} u + f_{yy} \\
 T^3 f(u, x, y, t) &= f_{xxx} u^3 + 3 f_{x^2 y} u^2 + 3 f_{xy^2}u + f_{yyy} 
 \end{align*}
 
-We call a point $Q' \in \Proj \IF_q[U_0, U_1] \times \IA^2 \times \IA^1$ \textit{admissible} if $\deg \pi(Q) \ge j$ and a subscheme $V$ \textit{admissible} if it contains an admissible point. By $(V)_\ad$ we denote the union of admissible irreducible components of $(V)_{\mathrm{red}}$. 
+We call a closed point $Q' \in \Proj \IF_q[U_0, U_1] \times \IA^2 \times \IA^1$ \textit{admissible} if $\deg \pi(Q) \ge j$ and a subscheme $V \subseteq  \Proj \IF_q[U_0, U_1] \times \IA^2 \times \IA^1$ \textit{admissible} if it contains an admissible point. We denote the union of admissible irreducible components of $(V)_{\mathrm{red}}$ by $V_{\ad}$, and the collection of its irreducible components by $\Irr \, V_{\ad}$.
 
 
 Following Poonen's idea, we write $f$ in a form so that the derivatives involved are largely independent. If $h \in A_{3, d}$, $g_i \in A_{0, \yk}$ for $0 \le i \le 4$ uniformly and independently at random, then the distribution of 
@@ -831,8 +833,8 @@ If $g, g' \in G_i^{\mathrm{bad}}$, then $g - g'$ vanishes identically on $V_i$. 
 $$ \varphi_i : A_{0, \yk} \to H^0(V_i, \sO_{V_i}) $$ 
 Now we apply Lemma~\ref{prep} by identifying $U' = \IA^1 \times \IA^2 \times \IA^1$ with $\IA^3 \times \IA^1$ to obtain that $\# \{ \im \varphi_i \} \ge q^{\min(\yk + 1, j)}$. Therefore the probability that a randomly chosen $g_3$ lies in $G_i^{\mathrm{bad}}$ is at most  $q^{- \min(\yk + 1, j)}$. Since there are $O(d)$ such $V_i$'s, the claim follows. \\\\
 \textit{Step 3: }Conditioned on choice $h, g_4, \cdots, g_1$ such that $\dim (W_1)_\ad = 0$, the probability that $(W_0)_\ad \neq \emptyset$ is at most $O(q^4 q^{- \min(\yk + 1, j)})$. \\
-\textit{Proof of Step 3:} By B{\`e}zout's theorem again, we see that $\# \{ W_0 \} = O(d^4)$. For an admissible point $Q \in W_0$, the set $H^{\mathrm{bad}}$ of $g_0 \in A_{0, \yk}$ for which $f$ vanishes at $Q$ forms a coset of the kernel of the map $\varphi_Q : A_{0, \yk} \to H^0(Q, \sO_Q)$. We apply Lemma~\ref{prep} again with $W = Q$ to prove claim 3. \\
-Finally \textit{Step 1} and \textit{2} combined to give that 
+\textit{Proof of Step 3:} By B{\'e}zout's theorem again, we see that $\# \{ W_0 \} = O(d^4)$. For an admissible point $Q \in W_0$, the set $H^{\mathrm{bad}}$ of $g_0 \in A_{0, \yk}$ for which $f$ vanishes at $Q$ forms a coset of the kernel of the map $\varphi_Q : A_{0, \yk} \to H^0(Q, \sO_Q)$. We apply Lemma~\ref{prep} again with $W = Q$ to prove claim 3. \\
+Finally \textit{Step 1} and \textit{2} together give that 
 \begin{align*}
 \Prob(\dim (W_1)_\ad) = 0) &\ge (1 - q^{-(\yk + 1)})\prod_{k = 1}^3 (1 - d^k q^{- \min(\yk + 1, j)}) \\
 &= 1 - O(d^3 q^{- \min(\yk + 1, j)})
@@ -861,7 +863,7 @@ f_y &= h_y + g_1^p
 \end{align*}
 By applying the same argument as in \textit{Step 1} and \textit{2}, we may show that 
 $$ \Prob(\dim(W'_1)_\ad = 0) = 1 - O(d^3 q^{- \min(\yk + 1, j)}) $$
-By applying the same arguments as in \textit{Step 3}, we may bound the probability that $f$ does not vanish at any of the irreducible components of $(W_2')_\ad$ given than $\dim (W'_2)_\ad = 0$, so that 
+By applying the same arguments as in \textit{Step 3}, we may bound the probability that $f$ does not vanish at any of the irreducible components of $(W_2')_\ad$ conditioned on $\dim (W'_2)_\ad = 0$, so that 
 $$ \Prob((W_0')_\ad = \emptyset) \ge 1 - O(d^4 q^{- \min(\yk + 1, j)}) $$\\\\
 \textbf{Type \uppercase\expandafter{\romannumeral3}}: This is the easiest case to deal with. There is no need to involve $U_i$'s. The proof is completely analogous to the second part of the proof of Lemma~\ref{prep}, where we treated the case in which the curve $H_f$ has a singularity on $\IA^1 \times \IA^1$, except that we have $\IA^2 \times \IA^1$ instead of $\IA^1 \times \IA^1$ and one more variable in this case. \\\\ 
 Now the proof of the lemma is complete. 
@@ -897,7 +899,7 @@ $$ \sP_{e_0}^{\mathrm{low}} \subseteq \sS \subseteq \sP_{e_0}^{\mathrm{low}} \cu
 As $e_0 \to \infty$, Lemma~\ref{pointsurj}, \ref{ellipticmed} and \ref{elliptichighf} combine to give that 
 $$ \Prob(f \in \sS) = \prod_{P \in \IP^1_{\IF_q}} \Prob( f \in \sS_P) $$
 
-Recall the following well known lemma:
+Finally we would like to make sure that this infinite product converges. Recall the following well known lemma:
 \begin{lemma}
 Suppose that $p_e, e = 1, 2, \cdots$ satisfy $0 \le p_e < 1$ and $\sum p_e < \infty$, then $\prod (1 - p_e) > 0$. 
 \end{lemma}
@@ -905,6 +907,8 @@ By Lemma~\ref{pcount}, the infinite product
 $$ \prod_{P \in \IP^1_{\IF_q}} \Prob( f \in \sS_P) = \prod_{e = 1}^\infty (\prod_{\deg P = e} \Prob(f \in \sS_P))$$
 converges since 
 $$ 1 - \prod_{\deg P = e} \Prob(f \in \sS_P) \le O(q^{-e})$$
+
+
 
 \begin{thebibliography}{9}
 \bibitem{expository}
