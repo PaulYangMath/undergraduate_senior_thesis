@@ -197,13 +197,35 @@
 %
 \begin{document}
 %
-\title{Undergraduate Senior Thesis}
+\title{Morphisms with Only Mild Singular Fibers and Bertini Theorems over 
+Finite Fields}
 \author{Ziquan Yang}
-\date{\today}
+\date{}
+\maketitle 
 
-\maketitle
+\begin{center}
+A Thesis Submitted to the Department of Mathematics for Honors \\
+Duke University, NC, 2016
+\end{center}
+\newpage
 
+\begin{abstract}
+We compute the asymptotic density of non-singular hypersurfaces of bidegree $(3, d)$ in $\IP^n \times \IP^1$ with only mild singular fibers over $\IP^1$ over a finite field $\IF_q$ for $n = 1, 2$. When $n = 1$ and $\mathrm{char\,} \IF_q > 2$, this asymptotic density is $\zeta_{\IP^1}(2)^{-2}$. When $n = 2$ and $\mathrm{char\,} \IF_q > 3$, it is bounded below and above by $\zeta_{\IP^1}(2)^{-1} \zeta_{\IP^1}(3/2)^{-1}$ and $\zeta_{\IP^1}(2)^{-2}$. 
+\end{abstract}
+
+\newpage
+
+\paragraph{Acknowledgments}
+
+I am deeply indebted to my research advisor, Prof.~Chad Schoen, for suggesting these problems to me and for his tireless patience and guidance throughout this research project. I would like to thank Profs.~Justin Curry, Richard Hain, and Mike Lipnowski for their helpful comments on this research, and Prof.~William Pardon for volunteering his time to be on my thesis committee. I am glad to have the opportunity to express my deep gratitude to Prof.~David Kraines, who generously funded me twice with PRUV Fellowship. I also thank Dean's Summer Research Fellowship for funding my research from late June to August 2015. 
+
+Finally, thank you to my parents, all professors who have taught me math, and my wonderful friends, who have made my undergraduate career a very enjoyable experience. Special thanks go to my departmental advisor Prof.~Hubert Bray and my first research advisor Prof.~Robert Calderbank, without whose encouragement and advice I might not even be doing mathematics now. 
+
+
+\newpage
 \tableofcontents
+
+\newpage
 
 \section{Introduction}
 Let $X$ be a non-singular closed subvariety of $\IP^N$ of dimension $m$ over a ground field $\kappa$ . The classical Bertini theorem states that if $\kappa$ is algebraically closed, then for almost all hyperplanes $H$, $H \cap X$ is non-singular. More precisely, the set of all hyperplanes with this property forms an open dense subset of the complete linear system $|\sO_{\IP^N}(1)|$, considered as a projective space.  
@@ -479,15 +501,16 @@ We will show that
 \begin{lemma}
 \label{pcount}
 Let $e = \deg P$. Then 
-$$\Prob(f \in \sS_{P}) = (1 + q^{-2e})(1 - 2q^{-2e} - q^{-4e} + q^{-5e} - 2q^{-6e} -q^{-7e})$$
-In particular, we have inequalities $$(1 - q^{-2e})(1 - q^{-3e/2}) < \Prob(f \in \sS_{P}) < (1 - q^{-2e})(1 - 2 q^{-2e} + q^{-4e}) = (1 - q^{-2e})^3$$
+$$\Prob(f \in \sS_{P}) = (1 - q^{-2e})(1 - 2q^{-2e} + \frac{1}{3} q^{-3e} + 2 q^{-5e} - q^{-6e} - \frac{1}{3} q^{-7e})$$
+In particular, we have inequalities $$(1 - q^{-2e})(1 - q^{-3e/2}) < \Prob(f \in \sS_{P}) < (1 - q^{-2e})^2$$
+when $\mathrm{char} \, \IF_q > 3$.
 \end{lemma}
 Now we may state our main theorem for elliptic surfaces over finite fields:
 \begin{theorem}
-\label{EllipticMainThm} Assume $\mathrm{char} \IF_q > 3$. The density of good hypersurfaces of bidegree $(3, d)$ in $\IP^2 \times \IP^1$ over $\IF_q$ converges to a number in $(0, 1)$ as $d \to \infty$. More precisely,  
+\label{EllipticMainThm} Assume $\mathrm{char} \, \IF_q > 3$. The density of good hypersurfaces of bidegree $(3, d)$ in $\IP^2 \times \IP^1$ over $\IF_q$ converges to a number in $(0, 1)$ as $d \to \infty$. More precisely,  
 $$ \Prob(f \in \sS) = \prod_{P \in \IP^1_{\IF_q}} \Prob( f \in \sS_{P}) $$
 Combined with the previous lemma, we obtain a bound for $\Prob(\sS)$ in terms of Zeta functions:
-$$ \zeta_{\IP^1_{\IF_q}}(2)^{-1} \zeta_{\IP^1_{\IF_q}}(3/2)^{-1} < \Prob(f \in \sS) < \zeta_{\IP^1_{\IF_q}}(2)^{-3}$$
+$$ \zeta_{\IP^1_{\IF_q}}(2)^{-1} \zeta_{\IP^1_{\IF_q}}(3/2)^{-1} < \Prob(f \in \sS) < \zeta_{\IP^1_{\IF_q}}(2)^{-2}$$
 \end{theorem}
 
 \subsection{Plane Cubics}
@@ -534,11 +557,11 @@ These statements are weaker than our observations, but they suffice for our purp
 
 
 \subsubsection{Counting Plane Cubics of Different Types}
-In this section we count the number of reducible, cuspidal and nodal cubics in the projective plane $\IP^2$ over a finite field $\IF_q$. Plane cubics are given by sections in $S = H^0(\IP^2, \sO(3))$. We may identify $S$ with the subset of $\IF_q[X_0, X_1, X_2]$ consisting of homogeneous polynomials of degree $3$. Given $f \in S$, we denote its vanishing locus in $\IP^2$ by $Z(f)$. Define 
+In this section we count the number of reducible, cuspidal and nodal cubics in the projective plane $\IP^2$ over a finite field $\IF_q$. Let $S_i = H^0(\IP^2, \sO(i))$ for $i = 1,2,3$. Plane cubics are given by sections in $S_3 = H^0(\IP^2, \sO(3))$. We may identify $S_i$ with the subset of $\IF_q[X_0, X_1, X_2]$ consisting of homogeneous polynomials of degree $i$. Given $f \in \union_i S_i$, we denote its vanishing locus in $\IP^2$ by $Z(f)$. Define 
 \begin{align*}
-R &= \{ f \in S : Z(f) \textit{ is reducible} \} \\
-C &= \{ f \in S : Z(f) \textit{ is cuspidal} \} \\
-N &= \{ f \in S : Z(f) \textit{ is nodal} \}
+R &= \{ f \in S_3 : Z(f) \textit{ is reducible} \} \\
+C &= \{ f \in S_3 : Z(f) \textit{ is cuspidal} \} \\
+N &= \{ f \in S_3 : Z(f) \textit{ is nodal} \}
 \end{align*}
 
 Let $H_j \subseteq \IF_q[U_0, U_1]$ denote the set of homogeneous polynomials of degree $j$. Given $g \in H_j$, denote its vanishing locus in $\IP^1 = \Proj \, \IF_q[U_0, U_1]$ by $Z(g)$. Note that $\dim_{\IF_q} H_j = j + 1$. If $g \in H_j$ and $W \in \IP^1$ is a finite subscheme, let $g|_W$ be the
@@ -573,14 +596,14 @@ $$ \frac{q + 1}{2q} (1 - q^{-1})^2 +  \frac{q - 1}{2q} (1 - q^{-2}) =  \frac{1}{
 
 \begin{lemma}
 \label{mainlemma}
-Let $Q \in \IP^2$ be a closed point of degree $1$, then for a randomly chosen $f \in S$,
+Let $Q \in \IP^2$ be a closed point of degree $1$, then for a randomly chosen $f \in S_3$,
 \begin{align*}
 \Prob(f \textit{ is a cuspidal curve with a cusp at } Q) &= \frac{1}{q^7}(q - 1)^2(q + 1) \\
 \Prob(f \textit{ is a nodal curve with a node at } Q) &= \frac{1}{q^7}(q - 1)^3(q + 1) \\
 \end{align*} 
 \end{lemma}
 \begin{proof}
-Without loss of generality, assume that $X_0 \neq 0$ at $Q$, so that $Q \in \IA^2$, on which we may use coordinates $x_1 = X_1/X_0, x_2 = X_2/X_0$. We further assume that $x_1(Q) = x_2(Q) = 0$, i.e. $Q$ is the origin of the affine chart $X_0 \neq 0$. We may identify $f \in S$ with its dehomogenization $f/X_0^3 = g(x_1, x_2)$ on $\IA^2$. We may write 
+Without loss of generality, assume that $X_0 \neq 0$ at $Q$, so that $Q \in \IA^2$, on which we may use coordinates $x_1 = X_1/X_0, x_2 = X_2/X_0$. We further assume that $x_1(Q) = x_2(Q) = 0$, i.e. $Q$ is the origin of the affine chart $X_0 \neq 0$. We may identify $f \in S_3$ with its dehomogenization $f/X_0^3 = g(x_1, x_2)$ on $\IA^2$. We may write 
 $$ g = g_0 + g_1 + g_2 + g_3 $$
 where $g_j$ is the homogeneous part of degree $j$ of $g$. If the $g_j$'s are chosen uniformly and independently at random, then the distribution of $f$ is uniform over $S$. $Z(g)$ is a cuspidal curve with a cusp at $Q$ if and only if 
 \begin{enumerate}[i.]
@@ -599,16 +622,50 @@ Similarly, $Z(g)$ is a nodal curve with a node at $Q$ if and only if
 This time $\Prob(i) = 1/q^3$, $\Prob(ii) = (q^3 - q^2)/q^3$ and Lemma~\ref{nonsquare} gives $\Prob(iii \mid ii)$. Therefore the probability that $Z(f)$ has a node at $Q$ is 
 $$ \frac{1}{q^3} \frac{q^3 - q^2}{q^3} \frac{1}{q^3}(q + 1)(q - 1)^2 = \frac{1}{q^7}(q - 1)^3(q + 1) $$
 \end{proof}
+We use the following lemmas to treat reducible cubics. 
+\begin{lemma}
+\label{countquadratic}
+In $S_2 - \{0\}$, the number of reducible polynomials is
+$$ \frac{1}{2}(q - 1)(q^2 + q + 1)(q^2 + q + 2) $$
+and the number of irreducible polynomials is 
+$$ \frac{1}{2} q(q - 1)^2 (2q + 1) (q^2 + q + 1) $$
+\end{lemma}
+\begin{proof}
+If $f \in S_2 - \{0\}$ is reducible, then $Z(f)$ is a union of two lines, which may or may not coincide. By considering the dual projective plane $\check{\IP^2}$, we see that there are $q^2 + q + 1$ lines in total. By applying the multiset formula, we have that there are 
+$$ \frac{1}{2}(q^2 + q + 1)(q^2 + q + 2)  $$
+choices for a union of two lines which are allowed to coincide. 
+Since the correspondence $f \mapsto Z(f)$ is $(q - 1)$-to-$1$, there are
+$$ \frac{1}{2}(q - 1)(q^2 + q + 1)(q^2 + q + 2) $$
+non-zero reducible polynomials in $S_2$. The number of irreducible polynomials is deduced from the fact that $\dim_{\IF_q} S_2 = 6$. 
+\end{proof}
+
+\begin{lemma}
+The number of $f \in S_3 - \{0\}$ that can be factored into three linear terms is 
+$$ \frac{1}{6} (q - 1) (q^2 + q + 1) (q^2 + q + 2) (q^2 + q + 3)$$ 
+The number of $f \in S_3 - \{0\}$ that can be factored into a irreducible quadratic polynomial and a linear polynomial is 
+$$  \frac{1}{2} q(q - 1)^2(2q + 1) (q^2 + q + 1)^2 $$
+\end{lemma}
+\begin{proof}
+To count $f \in S_3 - \{0\}$ that can be factored into three linear terms, we first count the number of possible $Z(f)$'s. $Z(f)$ is a union of three lines, which do not have to be distinct. The multiset formula again gives us that there are 
+$$ \frac{1}{6} (q^2 + q + 1) (q^2 + q + 2) (q^2 + q + 3) $$
+choices for $Z(f)$. The number of $f$ is obtained by adding a factor of $(q - 1)$ as before.
+
+If $f \in S_3 - \{0\}$ can be factored into an irreducible quadratic polynomial and a linear polynomial, then $Z(f)$ is the union of a conic and a line, which may or may not intersect tangentially. We can infer from Lemma~\ref{countquadratic} that there are 
+$$ \frac{1}{2} q(q - 1)(2q + 1) (q^2 + q + 1) $$
+conics. There are $q^2 + q  + 1$ choices for the line, so there are in total
+$$  \frac{1}{2} q(q - 1)^2(2q + 1) (q^2 + q + 1)^2 $$
+choices for $f$. 
+\end{proof}
+
 \begin{lemma}
 \begin{align*}
-\# R &= (q^2 + q + 1)(q^6 - 1)\\
+\# R &= \frac{1}{3}(q^2 + q + 1)(q - 1) (q + 1)(3q^4 - q^3 + 2 q^2 - 2q + 3)\\
 \# C &= q^3 (q^2 + q + 1) (q - 1)^2 (q + 1) \\
 \# N &= q^3 (q^2 + q + 1) (q - 1)^3 (q + 1)
 \end{align*}
 \end{lemma}
 \begin{proof}
-We obtain the number $\# R$ from the obvious $(q - 1)$-to-$1$ surjection 
-$$ (H^0(\IP^2, \sO(1)) - \{ 0 \}) \times (H^0(\IP^2, \sO(2)) - \{ 0 \}) \to R \subset H^0(\IP^2, \sO(3))$$
+We obtain the number $\# R$ by taking the sum of the two numbers in the statement of the previous lemma.
 $\# C$ and $\# N$ follow directly from Lemma~\ref{mainlemma} and the facts that there are $(q^2 + q + 1)$ closed points of degree $1$ in $\IP^2$ over $\IF_q$ and $\dim_{\IF_q} S = 10$. 
 \end{proof}
 
@@ -617,9 +674,9 @@ $\# C$ and $\# N$ follow directly from Lemma~\ref{mainlemma} and the facts that 
 In a similar vein as in section~\ref{simplify-ramified}, we are going to work with the following sets:
 For a fixed $e_0 \in \IN$, we define 
 \begin{align*}
-\sP_{e_0}^{\mathrm{low}} &= \union_{d \ge 0} \{ f \in S_{n, d} : H_f \textit{ is good at all $P \in \IP^1_{\IF_q}$,}\deg P < e_0\}\\
-\sQ_{e_0}^{\mathrm{med}} &= \union_{d \ge 0} \{f \in S_{n, d} : H_f \textit{ is bad at some $P \in \IP^1_{\IF_q}$,}\deg P \in [e_0, \lfloor d/p \rfloor]\}\\
-\sQ^{\mathrm{high}} &= \union_{d \ge 0} \{f \in S_{n, d} : H_f \textit{ is bad at some $P \in \IP^1_{\IF_q}$,}\deg P \in > d/p\}
+\sP_{e_0}^{\mathrm{low}} &= \union_{d \ge 0} \{ f \in S_{3, d} : H_f \textit{ is good at all $P \in \IP^1_{\IF_q}$,}\deg P < e_0\}\\
+\sQ_{e_0}^{\mathrm{med}} &= \union_{d \ge 0} \{f \in S_{3, d} : H_f \textit{ is bad at some $P \in \IP^1_{\IF_q}$,}\deg P \in [e_0, \lfloor d/p \rfloor]\}\\
+\sQ^{\mathrm{high}} &= \union_{d \ge 0} \{f \in S_{3, d} : H_f \textit{ is bad at some $P \in \IP^1_{\IF_q}$,}\deg P \in > d/p\}
 \end{align*}
 \subsubsection{Points of Low and Medium Degree}
  
@@ -672,7 +729,7 @@ The lemma follows by taking $d \to \infty$ on both sides.
 
 \begin{lemma}
 \label{prepcount}
-The fraction of good pairs in $H^0(\IP^2_{\IF_{q^e}}, \sO(3))^2$ is $$(1 + q^{-2e})(1 - 2q^{-2e} - q^{-4e} + q^{-5e} - 2q^{-6e} -q^{-7e})$$ 
+The fraction of good pairs in $H^0(\IP^2_{\IF_{q^e}}, \sO(3))^2$ is $$(1 - q^{-2e})(1 - 2q^{-2e} + \frac{1}{3} q^{-3e} + 2 q^{-5e} - q^{-6e} - \frac{1}{3} q^{-7e}) $$ 
 By the previous lemma, if $e = \deg P$, then this fraction is precisely $\Prob(f \in \sS_P)$, defined in Section 3.1.
 \end{lemma}
 \begin{proof}
@@ -692,31 +749,22 @@ We denote the above events by $E_1, E_2, E_3, E_4$ respectively. To simplify not
 and 
 \begin{align*}
 \Prob(E_2) &= \frac{1}{\pmb{q}^7} (\pmb{q}^2 + \pmb{q} + 1) (\pmb{q} - 1)^2 (\pmb{q} + 1)\\
-\Prob(E_3) &= \frac{1}{\pmb{q}^{10}} (\pmb{q}^2 + \pmb{q} + 1)(\pmb{q}^6 - 1)
+\Prob(E_3) &= \frac{1}{3\pmb{q}^{10}}(\pmb{q}^2 + \pmb{q} + 1)(\pmb{q} - 1) (\pmb{q} + 1)(3\pmb{q}^4 - \pmb{q}^3 + 2 \pmb{q}^2 - 2\pmb{q} + 3)
 \end{align*}
 It is clear that $\Prob(E_4) = \pmb{q}^{-10}$. The events $E_j$'s are clearly disjoint, so the fraction of good pairs in the lemma is computed by 
 $$ 1 - \sum_{j = 1}^4 \Prob(E_j) $$
 \end{proof}
 
-\noindent \textit{Proof of Lemma~\ref{pcount}}. The first statement is simply Lemma~\ref{prepcount}. The second inequality in the second statement is obvious. For the first equality, we can numerically verify that 
-$$ 1 - x^{-3/2} < 1 - 2x^{-2} - x^{-4} + x^{-5} - 2x^{-6} - x^{-7} $$
-holds when $x \ge 5$. Above are two plots of the function $(1 - 2x^{-2} - x^{-4} + x^{-5} - 2x^{-6} - x^{-7}) - (1 - x^{-3/2})$: 
-\begin{figure}
-    \centering
-    \begin{subfigure}[b]{0.4 \textwidth}
-        \includegraphics[width=\textwidth]{plotsmallscale.jpg}
-        \caption{Graph on the domain $[3, 5]$}
-        \label{fig:small}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.4 \textwidth}
-        \includegraphics[width=\textwidth]{plotlargescale.jpg}
-        \caption{Graph on the domain $[3, 100]$}
-        \label{fig:large}
-    \end{subfigure}
-\end{figure}
+\noindent \textit{Proof of Lemma~\ref{pcount}}. The first statement is simply Lemma~\ref{prepcount}. We check the inequalities in the second statement. First we show that when $x \in \mathbb{R}$ and $x \ge 5 $, 
+$$ (1 - x^{-2}) - (1 - 2 x^{-2} + \frac{1}{3} x^{-3} + 2 x^{-5} - x^{-6} - \frac{1}{3} x^{-7}) > 0 $$ 
+Denote the function of $x$ on the LHS as $a(x)$. We know that $a(x)$ is always positive when $x$ is large enough. By solving the equation $a(x) = 0$ numerically, we can see that the largest real root of $a(x) = 0$ is $1$. Since we have assumed $\mathrm{char} \, \IF_q \ge 5$, $q \ge 5$ and 
+$$ (1 - q^{-2e})(1 - 2q^{-2e} + \frac{1}{3} q^{-3e} + 2 q^{-5e} - q^{-6e} - \frac{1}{3} q^{-7e}) < (1 - q^{-2e})^2 $$
+Now we show that when $x \ge 5$, 
+$$ (1 - x^{-3/2}) - (1 - 2 x^{-2} + \frac{1}{3} x^{-3} + 2 x^{-5} - x^{-6} - \frac{1}{3} x^{-7}) < 0 $$
+Let us call the function of $x$ on the LHS $b(x)$. The largest real root to the equation $b(x) = 0$ is approximately $3.474$ and we know that $b(x) < 0$ when $x$ is large enough. Therefore when $x \ge 5$, $b(x) < 0$ and 
+$$ (1 - q^{-2e}) (1 - q^{-3e/2}) < (1 - q^{-2e})(1 - 2q^{-2e} + \frac{1}{3} q^{-3e} + 2 q^{-5e} - q^{-6e} - \frac{1}{3} q^{-7e})  $$
 
-
-However, we have assumed that $\mathrm{char\,}\IF_q \ge 5$, so the inequality holds in our situation. \qed
+\qed
 
 
 
@@ -871,6 +919,8 @@ By Lemma~\ref{pcount}, the infinite product
 $$ \prod_{P \in \IP^1_{\IF_q}} \Prob( f \in \sS_P) = \prod_{e = 1}^\infty (\prod_{\deg P = e} \Prob(f \in \sS_P))$$
 converges since 
 $$ 1 - \prod_{\deg P = e} \Prob(f \in \sS_P) \le O(q^{-e})$$
+
+
 
 
 
