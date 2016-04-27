@@ -15,4 +15,4 @@
 \contentsline {subsection}{\numberline {3.3}A Density Result over Finite Fields}{23}
 \contentsline {subsubsection}{\numberline {3.3.1}Points of Low and Medium Degree}{23}
 \contentsline {subsubsection}{\numberline {3.3.2}Points of High Degree}{27}
-\contentsline {subsubsection}{\numberline {3.3.3}Proof of the Main Result}{30}
+\contentsline {subsubsection}{\numberline {3.3.3}Proof of the Main Result}{31}
